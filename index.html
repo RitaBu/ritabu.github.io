@@ -33,7 +33,7 @@
 			</div>
 			<div class="row">
 				<form class="form-inline">
-					<label for="exerciseName" class="col-form-label col-form-label-sm">Užduotis</label>
+					<label for="exerciseName" class="col-form-label col-form-label-sm">Užduotis:</label>
 					<select class="form-control form-control-sm" id="exerciseName">
 						<option>Spalvos</option>
 						<option>Spavoti žodžiai</option>
@@ -45,11 +45,11 @@
 					</div>
 					<button 
 						type="button" 
-						class="form-control-sm btn btn-primary" 
+						class="form-control-sm btn btn-info" 
 						id="submit-button">Pridėti
 					</button>
 					<div class="dropdown">
-							<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							<button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 								Tema
 							</button>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -68,7 +68,7 @@
 	</body>
 	<script type="text/javascript">
 
-		makeChart('none');
+		makeChart('light');
 
 		const changeTheme = (element) => {
 			makeChart(element);
