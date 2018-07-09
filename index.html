@@ -27,21 +27,44 @@
 		
 	</head>
 	<body class="row justify-content-md-center">
-		<div class="dropdown">
-			<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-				Tema
-			</button>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<a class="dropdown-item" id="none" onclick="changeTheme(id)">None</a>
-				<a class="dropdown-item" id="light" onclick="changeTheme(id)">Light</a>
-				<a class="dropdown-item" id="dark" onclick="changeTheme(id)">Dark</a>
-				<a class="dropdown-item" id="black" onclick="changeTheme(id)">Black</a>
-				<a class="dropdown-item" id="chalk" onclick="changeTheme(id)">Chalk</a>
-				<a class="dropdown-item" id="patterns" onclick="changeTheme(id)">Patterns</a>
+		<div class="column" id="input-form">
+			<div class="row">
+				
+			</div>
+			<div class="row">
+				<form class="form-inline">
+					<label for="exerciseName" class="col-form-label col-form-label-sm">Užduotis</label>
+					<select class="form-control form-control-sm" id="exerciseName">
+						<option>Spalvos</option>
+						<option>Spavoti žodžiai</option>
+						<option>Spavotos spalvos</option>
+					</select>
+					<label for="seconds" class="col-form-label col-form-label-sm">Laikas:</label>
+					<div class="">
+						<input type="number" class="form-control form-control-sm" id="seconds">
+					</div>
+					<button 
+						type="button" 
+						class="form-control-sm btn btn-primary" 
+						id="submit-button">Pridėti
+					</button>
+					<div class="dropdown">
+							<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								Tema
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item" id="none" onclick="changeTheme(id)">None</a>
+								<a class="dropdown-item" id="light" onclick="changeTheme(id)">Light</a>
+								<a class="dropdown-item" id="dark" onclick="changeTheme(id)">Dark</a>
+								<a class="dropdown-item" id="black" onclick="changeTheme(id)">Black</a>
+								<a class="dropdown-item" id="chalk" onclick="changeTheme(id)">Chalk</a>
+								<a class="dropdown-item" id="patterns" onclick="changeTheme(id)">Patterns</a>
+							</div>
+						</div>
+				</form>
 			</div>
 		</div>
 		<div id="chartdiv" style="width: 100%; height: 400px;" ></div>
-		
 	</body>
 	<script type="text/javascript">
 

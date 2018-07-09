@@ -1,4 +1,7 @@
-body { flex: 1 }
+/* body { 
+    flex: 1; 
+    flex-direction: 'row' 
+} */
 
 #dropdownMenuButton {
     margin: 20px;
@@ -7,4 +10,17 @@ body { flex: 1 }
 #chartdiv {
     margin-left: 20px;
     margin-right: 20px;
+}
+
+#input-form {
+    width: '100%'
+}
+
+label {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#submit-button {
+    margin-left: 5px;
 }
