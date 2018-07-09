@@ -1,5 +1,5 @@
 var defaultTheme = 'light';
-
+var theme = defaultTheme;
 var chart;
 
 var data;
@@ -43,7 +43,7 @@ var chartConfig = {
   }
 };
 
-function makeChart(theme = defaultTheme) { 
+function makeChart() { 
 
   if (chart && chart.clear) {
     chart.clear();

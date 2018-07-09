@@ -53,18 +53,18 @@
 						Pridėti
 					</button>
 					<div class="dropdown">
-							<button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								Tema
-							</button>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<a class="dropdown-item" id="none" onclick="changeTheme(id)">None</a>
-								<a class="dropdown-item" id="light" onclick="changeTheme(id)">Light</a>
-								<a class="dropdown-item" id="dark" onclick="changeTheme(id)">Dark</a>
-								<a class="dropdown-item" id="black" onclick="changeTheme(id)">Black</a>
-								<a class="dropdown-item" id="chalk" onclick="changeTheme(id)">Chalk</a>
-								<a class="dropdown-item" id="patterns" onclick="changeTheme(id)">Patterns</a>
-							</div>
+						<button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							Tema
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" id="none" onclick="changeTheme(id)">None</a>
+							<a class="dropdown-item" id="light" onclick="changeTheme(id)">Light</a>
+							<a class="dropdown-item" id="dark" onclick="changeTheme(id)">Dark</a>
+							<a class="dropdown-item" id="black" onclick="changeTheme(id)">Black</a>
+							<a class="dropdown-item" id="chalk" onclick="changeTheme(id)">Chalk</a>
+							<a class="dropdown-item" id="patterns" onclick="changeTheme(id)">Patterns</a>
 						</div>
+					</div>
 				</form>
 			</div>
 			<table id="results-table" class="table table-sm">
@@ -109,7 +109,8 @@
 		makeChart();
 
 		const changeTheme = (element) => {
-			makeChart(element);
+			theme = element;
+			makeChart();
 		};
 
 		const onSubmit = () => {
@@ -125,14 +126,18 @@
 				let results = {
 					kortelesNumeris: eNameOptionValue,
 					kortelesTipas: eNameOption.options[eNameOption.selectedIndex].text,
-					pirmasBandymas: 0,
-					antrasBandymas: 0,
-					treciasBandymas: 0
+					pirmasBandymas: $('#seconds1')[0].value !== null ? $('#seconds1')[0].value : "",
+					antrasBandymas:  $('#seconds2')[0].value !== null ? $('#seconds2')[0].value : "",
+					treciasBandymas: $('#seconds3')[0].value !== null ? $('#seconds3')[0].value : "",
 				}
 
 				data.push(results);
 				updateTable(data);
 				makeChart();
+
+				 $('#seconds1')[0].value = "";
+				 $('#seconds2')[0].value = "";
+				 $('#seconds3')[0].value = "";
 			}
 			
 		}
