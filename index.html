@@ -27,10 +27,8 @@
 		
 	</head>
 	<body class="row justify-content-md-center">
-		<div class="column" id="input-form">
-			<div class="row">
-				
-			</div>
+		<h2 id="header">Spalvų-žodžių testas</h2>
+		<div class="column">
 			<div class="row">
 				<form class="form-inline">
 					<label for="exerciseName" class="col-form-label col-form-label-sm">Užduotis:</label>
@@ -40,9 +38,14 @@
 						<option>Spavotos spalvos</option>
 					</select>
 					<label for="seconds" class="col-form-label col-form-label-sm">Laikas:</label>
-					<div class="">
-						<input type="number" class="form-control form-control-sm" id="seconds">
-					</div>
+					<input type="number" class="form-control form-control-sm" id="seconds">
+
+					<label for="seconds" class="col-form-label col-form-label-sm">Laikas 2:</label>
+					<input type="number" class="form-control form-control-sm" id="seconds">
+
+					<label for="seconds" class="col-form-label col-form-label-sm">Laikas 3:</label>
+					<input type="number" class="form-control form-control-sm" id="seconds">
+
 					<button 
 						type="button" 
 						class="form-control-sm btn btn-info" 
@@ -63,6 +66,27 @@
 						</div>
 				</form>
 			</div>
+			<table class="table table-sm">
+					<thead>
+					  <tr>
+						<th scope="col">#</th>
+						<th scope="col">Užduoties pavadinimas</th>
+						<th scope="col">Pirmas bandymas</th>
+						<th scope="col">Antras bandymas</th>
+						<th scope="col">Trečias bandymas</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<th scope="row">1</th>
+						<td>Spalvotos spalvos</td>
+						<td>10</td>
+						<td>15</td>
+						<td>30</td>
+						<td></td>
+					  </tr>
+					</tbody>
+				  </table>
 		</div>
 		<div id="chartdiv" style="width: 100%; height: 400px;" ></div>
 	</body>

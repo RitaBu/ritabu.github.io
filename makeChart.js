@@ -39,18 +39,23 @@ function makeChart(theme) {
   }
   var config = JSON.parse(JSON.stringify(chartConfig)); //clone the config before reusing it
   config.theme = theme;
+  document.body.style.color =  "#000";
   
   if (theme === "dark") {
     document.body.style.backgroundColor = "#282828";
+    document.body.style.color = "#ffffff";
   }
   else if (theme === "black") {
     document.body.style.backgroundColor = "#000";
+    document.body.style.color = "#ffffff";
   }
   else if(theme === "chalk"){
     document.body.style.backgroundColor = "#3f3e3b";
+    document.body.style.color = "#ffffff";
   }
   else {
     document.body.style.backgroundColor = "#ffffff";
+    
   }
   
   chart = AmCharts.makeChart("chartdiv", config);
