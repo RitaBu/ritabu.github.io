@@ -1,17 +1,12 @@
+var defaultTheme = 'light';
+
 var chart;
-//var data = JSON.parse
+
+var data;
+
 var chartConfig = {
   type: "serial",
-  dataProvider: [{
-    "kortelesTipas": 'Spalvos',
-    "laikasSekundemis": 11.5
-  }, {
-    "kortelesTipas": 'Spalvoti zodziai',
-    "laikasSekundemis": 23.2
-  }, {
-    "kortelesTipas": 'Spalvotos spalvos',
-    "laikasSekundemis": 30.1
-  }],
+  dataProvider: data,
   categoryField: "kortelesTipas",
   categoryAxis: {
     gridPosition: "start"
@@ -21,8 +16,24 @@ var chartConfig = {
   }],
   graphs: [{
     type: "column",
-    title: "Laikas (s) kiekvienai ",
-    valueField: "laikasSekundemis",
+    title: "Pirmas bandymas",
+    valueField: "pirmasBandymas",
+    lineAlpha: 0,
+    fillAlphas: 0.8,
+    balloonText: "Atlikta per:<b>[[value]]</b>s"
+  },
+  {
+    type: "column",
+    title: "Antras bandymas",
+    valueField: "antrasBandymas",
+    lineAlpha: 0,
+    fillAlphas: 0.8,
+    balloonText: "Atlikta per:<b>[[value]]</b>s"
+  },
+  {
+    type: "column",
+    title: "Trečias bandymas",
+    valueField: "treciasBandymas",
     lineAlpha: 0,
     fillAlphas: 0.8,
     balloonText: "Atlikta per:<b>[[value]]</b>s"
@@ -32,15 +43,18 @@ var chartConfig = {
   }
 };
 
-function makeChart(theme) {      
+function makeChart(theme = defaultTheme) { 
+
   if (chart && chart.clear) {
     chart.clear();
     chart = null;
   }
+
+  chartConfig.dataProvider = data;
   var config = JSON.parse(JSON.stringify(chartConfig)); //clone the config before reusing it
   config.theme = theme;
   document.body.style.color =  "#000";
-  
+
   if (theme === "dark") {
     document.body.style.backgroundColor = "#282828";
     document.body.style.color = "#ffffff";
