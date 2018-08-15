@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css"
+        rel="stylesheet">
+    <link href="../css/style.css"
+        rel="stylesheet">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Lekton:700&subset=latin-ext');
+    #preview {
+        font-family: Lekton;
+        font-size: 12px;
+        color: black;
+        background-image: url("../img_lessons/independence/fonas.png");
+    }
+
+    /*#preview_text {
+    padding: 60px 40px 10px 25px;
+}
+
+#list {
+    padding: 15px 40px 10px 25px;
+}*/
+
+    #preview_text {
+        padding: 60px 0px 0px 15px;
+    }
+
+    #list {
+        padding: 10px 5px 0px 15px;
+    }
+</style>
+<!-- font-family: 'Lekton', sans-serif; -->
+
+<body>
+    <div class='customAlert'>
+        <p class='message'></p>
+        <input type='button'
+            class='confirmButton'
+            value='Gerai'>
+    </div>
+    <div class="container-fluid header-top">
+        <a href="../index.html"><img class="header_logo img-fluid" src="../img_lessons/100_small1.png"></a>
+        <div class="progress-container">
+            <ul style="text-align: center;">
+                <li>
+                    <a class="active"
+                        href="level1-1.html">1</a>
+                </li>
+                <li>
+                    <a href="level1-2.html">2</a>
+                </li>
+                <li>
+                    <a href="level1-3.html">3</a>
+                </li>
+                <li>
+                    <a href="level1-4.html">4</a>
+                </li>
+                <li>
+                    <a href="level1-5.html">5</a>
+                </li>
+                <li>
+                    <a href="level1-6.html">6</a>
+                </li>
+                <li>
+                    <a href="level1-7.html">7</a>
+                </li>
+                <li>
+                    <a href="level1-8.html">8</a>
+                </li>
+                <li>
+                    <a href="level1-9.html">9</a>
+                </li>
+                <li>
+                    <a href="level1-10.html">10</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid working-space">
+        <div class="row"
+            style="padding: 10px;">
+            <div class="col-md-5">
+                <h4>1. Neatkarības deklarācija: atšķetini vārdu kārtību</h4>
+            </div>
+            <div class=" col-md-7"
+                id="task"> Šis ir fragments no deklarācijas "Par Latvijas Republikas neatkarības atjaunošanu". Tomēr zemāk esošie vārdi deklarācijas tekstā ir sajaukti. Saliec nomaldījušās rindiņas to attiecīgajās vietās. Ekrāna labajā pusē atradīsi nepieciešamos kodu
+                blokus. Uzdevums būs pabeigts, kad rindiņas būs saliktas pareizā secībā. Nospied pogu "Starts", lai uzzinātu, vai esi atbildējis pareizi.
+                <!-- <a href="javascript:void(0)" onclick="changeVideo('tdYGNqb2zgU')">Užduoties video</a> -->
+            </div>
+        </div>
+        <div class="row"
+            style="padding: 10px">
+            <div class="col  ">
+                <div id="preview">
+                    <canvas id="canvas"
+                        width="490"
+                        height="330">
+                        This text is displayed if your browser does not support HTML5 Canvas.
+                    </canvas>
+                    <div id="preview_text"></div>
+                    <div id="list"></div>
+                </div>
+                <div class="button-panel">
+                    <button class="button-run btn btn-lg btn-secondary"
+                        onclick="runCode()">Starts </button>
+                    <div class="hint-panel">
+                        <ul> Norāde:
+                            <li>
+                                <a tabindex="0"
+                                    href="javascript:void(0)"
+                                    data-toggle="popover"
+                                    data-placement="top"
+                                    data-trigger="focus"
+                                    title=""
+                                    data-text="Izvēlies rindiņas skaitli un atbildes burtu."
+                                    data-full="../hints/L1T1_H1.png">1</a>
+                            </li>
+                            <li>
+                                <a tabindex="0"
+                                    href="javascript:void(0)"
+                                    data-toggle="popover"
+                                    data-placement="top"
+                                    data-trigger="focus"
+                                    title=""
+                                    data-text="Kopēšana ne vienmēr ir slikta... <a href='' target='_blank'>Šis ir pareizais deklarācijas teksts. </a>.">2</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col"
+                style="padding: 0 ;">
+                <div id="blocklyDiv">
+                </div>
+                <xml id="toolbox"
+                    style="display: none">
+                    <category name="Skaitļi"
+                        colour="230">
+                        <block type="math_number"></block>
+                    </category>
+                    <category name="Teksts"
+                        colour="160">
+                        <block type="tekstas1"></block>
+                        <block type="tekstas2"></block>
+                        <block type="tekstas3"></block>
+                    </category>
+                    <category name="Saraksti"
+                        colour="#745CA6">
+                        <block type="lists_setIndex">
+                            <mutation at="true"></mutation>
+                            <field name="MODE">SET</field>
+                            <field name="WHERE">FROM_START</field>
+                            <value name="LIST">
+                                <block type="variables_get">
+                                    <field name="VAR"
+                                        id="agSI/ogyCXtYTJxS:dXL"
+                                        variabletype="">teksts</field>
+                                </block>
+                            </value>
+                        </block>
+                    </category>
+                </xml>
+            </div>
+            <div class="col-md-3 col-lg-2"
+                style="height: 70vh;">
+                <h5>Javascript kods: </h5>
+                <pre id="content_javascript">
+                </pre>
+            </div>
+        </div>
+        <!--         <div class="row">
+            <div class="logo-row">
+                <img src="../100/logo13.png"><img src="../100/logo12.png"><img src="../100/logo14.png">
+            </div>
+        </div> -->
+        <div class="next-modal">
+            <div class="modal fade"
+                id="nextModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="nextModalLabel">
+                <div class="modal-dialog"
+                    role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div>
+                                <h3>Tev tas izdevās!</h3>
+                            </div>
+                            <div class="modal-buttons">
+                                <a href="#"
+                                    class="btn btn-secondary"
+                                    data-dismiss="modal">Doties atpakaļ uz uzdevumu</a>
+                                <a href="level1-2.html"
+                                    class="btn btn-secondary">Nākamais uzdevums</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/blockly_compressed.js"></script>
+    <script src="../js/javascript_compressed.js"></script>
+    <script src="../js/blocks_compressed.js"></script>
+    <script src="../msg/js/lv.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/sarasai.js"></script>
+    <script>
+        $('#list').show();
+        $('#preview_text').show();
+        var workspace = Blockly.inject('blocklyDiv', {
+            toolbox: document.getElementById('toolbox'),
+            grid: {
+                spacing: 20,
+                length: 5,
+                colour: '#f2f2f2',
+                snap: true
+            },
+            trashcan: true
+        });
+
+
+        function toJavascript(event) {
+            var code = Blockly.JavaScript.workspaceToCode(workspace);
+            document.getElementById('content_javascript').innerHTML = code;
+        }
+        workspace.addChangeListener(toJavascript);
+    </script>
+    <script type="text/javascript">
+        var tekstas_correct = [];
+        tekstas_correct[0] = (1);
+        tekstas_correct[1] = (2);
+        tekstas_correct[2] = (3);
+        var tekstas_old = [];
+        var tekstas = [];
+        tekstas_old[0] = " 1.___________" //" 1918. gada 18. novembrī ";
+        tekstas_old[1] = " proklamētā neatkarīgā Latvijas valsts 1920. gadā tika starptautiski atzīta un 1921. gadā kļuva par līdztiesīgu Tautu Savienības locekli. 1922. gada 15. februārī tā pieņēma valsts pamatlikumu — ";
+        tekstas_old[2] = " 2.___________" // " Latvijas Republikas Satversmi "
+        tekstas_old[3] = " kas de jure ir spēkā līdz šim brīdim. Okupācijas laikā, ņemot vērā 1990. gada 21. aprīļa Vislatvijas tautas deputātu sapulces Aicinājumu un ievērojot Latvijas iedzīvotāju gribu, kas nepārprotami izpausta, ievēlot vairākumā tos deputātus,";
+        tekstas_old[4] = " 3.___________" //" kuri savā priekšvēlēšanu programmā izteikuši apņēmību atjaunot Latvijas Republikas valstisko neatkarību "
+        tekstas_old[5] = " nostājoties uz brīvas, demokrātiskas un neatkarīgas Latvijas Republikas de facto atjaunošanas ceļa, Latvijas PSR Augstākā Padome nolemj atjaunot Latvijas Republikas Satversmes darbību visā Latvijas teritorijā.";
+
+        var tekstas_short = [];
+        tekstas_short[0] = " 1918. gada 18. novembrī "
+        tekstas_short[1] = " Latvijas Republikas Satversmi, "
+        tekstas_short[2] = " kuri savā priekšvēlēšanu programmā izteikuši apņēmību atjaunot Latvijas Republikas valstisko neatkarību "
+
+        document.getElementById('preview_text').innerHTML = tekstas_old.join("");
+        document.getElementById('list').innerHTML = "A. " + tekstas_short[2] + "<br>";
+        document.getElementById('list').innerHTML += "B. " + tekstas_short[0] + "<br>";
+        document.getElementById('list').innerHTML += "C. " + tekstas_short[1] + "<br>";
+
+        function runCode() {
+            $('#list').show();
+            $('#preview_text').show();
+            document.getElementById('preview').style.background = 'url("../img_lessons/independence/fonas.png") no-repeat';
+            tekstas = [];
+
+            // Generate JavaScript code and run it.
+
+            window.LoopTrap = 1000;
+            Blockly.JavaScript.INFINITE_LOOP_TRAP =
+                'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+            var code = 'tekstas = [];';
+            code += Blockly.JavaScript.workspaceToCode(workspace);
+            Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+
+            tekstas_old[0] = " 1.___________" //" 1918. gada 18. novembrī ";
+            tekstas_old[1] = " proklamētā neatkarīgā Latvijas valsts 1920. gadā tika starptautiski atzīta un 1921. gadā kļuva par līdztiesīgu Tautu Savienības locekli. 1922. gada 15. februārī tā pieņēma valsts pamatlikumu — ";
+            tekstas_old[2] = " 2.___________" // " Latvijas Republikas Satversmi "
+            tekstas_old[3] = " kas de jure ir spēkā līdz šim brīdim. Okupācijas laikā, ņemot vērā 1990. gada 21. aprīļa Vislatvijas tautas deputātu sapulces Aicinājumu un ievērojot Latvijas iedzīvotāju gribu, kas nepārprotami izpausta, ievēlot vairākumā tos deputātus,";
+            tekstas_old[4] = " 3.___________" //" kuri savā priekšvēlēšanu programmā izteikuši apņēmību atjaunot Latvijas Republikas valstisko neatkarību "
+            tekstas_old[5] = " nostājoties uz brīvas, demokrātiskas un neatkarīgas Latvijas Republikas de facto atjaunošanas ceļa, Latvijas PSR Augstākā Padome nolemj atjaunot Latvijas Republikas Satversmes darbību visā Latvijas teritorijā.";
+            try {
+                if (code.length > 13) {
+                    eval(code);
+
+                    for (var i = tekstas.length - 1; i >= 0; i--) {
+                        if (tekstas[i]) {
+                            if (i == 1) {
+                                tekstas_old.splice(2, 1, " " + (i + 1) + ". " + tekstas_short[tekstas[i] - 1]);
+                            } else if (i == 2) {
+                                tekstas_old.splice(4, 1, " " + (i + 1) + ". " + tekstas_short[tekstas[i] - 1]);
+                            } else if (i == 0) {
+                                tekstas_old.splice(0, 1, " " + (i + 1) + ". " + tekstas_short[tekstas[i] - 1]);
+                            }
+
+                        }
+                    }
+
+                    document.getElementById('preview_text').innerHTML = tekstas_old.join("");
+
+                    document.getElementById('list').innerHTML = "A. " + tekstas_short[2] + "<br>";
+                    document.getElementById('list').innerHTML += "B. " + tekstas_short[0] + "<br>";
+                    document.getElementById('list').innerHTML += "C. " + tekstas_short[1] + "<br>";
+                    if (JSON.stringify(tekstas_correct) == JSON.stringify(tekstas)) {
+                        $('#list').hide();
+                        $('#preview_text').hide();
+                        document.getElementById('preview').style.background = 'url("../img_lessons/independence/fonas-2.gif") no-repeat';
+                        setTimeout(function() {
+                            $('#nextModal').modal('show');
+                        }, 2000);
+
+                    } else {
+                        alert("Mēģināt vēlreiz");
+                    }
+
+                } else {
+                    alert('Pievienot bloku.');
+                }
+
+            } catch (e) {
+                alert('Kļūda! Lūdzu, pārbaudi blokus');
+            }
+        }
+    </script>
+</body>
+
+</html>
