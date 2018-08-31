@@ -4,7 +4,7 @@ Blockly.Blocks['go_left'] = {
     init: function() {
         this.appendValueInput("fly")
             .setCheck(null)
-            .appendField("Dodies augšup");
+            .appendField("uz augšu");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(330);
@@ -27,7 +27,7 @@ Blockly.Blocks['go_right'] = {
     init: function() {
         this.appendValueInput("fly")
             .setCheck(null)
-            .appendField("Dodies lejup");
+            .appendField("uz leju");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(330);
@@ -50,7 +50,7 @@ Blockly.Blocks['go_straight'] = {
     init: function() {
         this.appendValueInput("fly")
             .setCheck(null)
-            .appendField("Dodies taisni");
+            .appendField("pa labi");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(330);
@@ -73,7 +73,7 @@ Blockly.Blocks['go_back'] = {
     init: function() {
         this.appendValueInput("fly")
             .setCheck(null)
-            .appendField("Dodies atpakaļ");
+            .appendField("pa kreisi");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(330);
