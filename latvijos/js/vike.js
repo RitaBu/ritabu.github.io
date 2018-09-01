@@ -94,7 +94,7 @@ Blockly.Blocks['treasure'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("sasniegums")
-        .appendField(new Blockly.FieldDropdown([["rodyti","visible"], ["slėpti","hidden"]]), "visibility");
+        .appendField(new Blockly.FieldDropdown([["parādīt","visible"], ["paslēpt","hidden"]]), "visibility");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(330);
