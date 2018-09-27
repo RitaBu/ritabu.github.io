@@ -67,9 +67,11 @@
                 <h4>2. Dodies ceļā, Milda</h4>
             </div>
             <div class=" col-md-7"
-                id="task">
-                Palīdzi Mildai apceļot visus četrus Latvijas novadus un tajos esošos dabas brīnumus. Viņas ceļojums sākas Rīgā, tālāk viņa dodas uz Jūrkalni Kurzemē, Tērvetes dabas parku Zemgalē, Daugavas lokiem Latgalē un Gaujas Nacionālo parku Vidzemē. Programmē viņas
-                ceļu, savienojot blokus un norādot viņai pareizo virzienu, tā, lai būtu apmeklētas visas četras vietas.
+                id="task"> 
+                Palīdzi Mildai apceļot visus Latvijas novadus un apskatīt tajos esošos dabas objektus - 
+                Jūrkalni Kurzemē, Tērvetes dabas parku Zemgalē, Daugavas lokus Latgalē un Gaujas Nacionālo 
+                parku Vidzemē! Savieno blokus ar norādēm un uzprogrammē Mildas ceļu, lai viņa pieskartos 
+                visiem punktiem.
             </div>
         </div>
         <div class="row"
@@ -231,7 +233,7 @@
             background.beginPath();
             background.arc(167, 207, 12, 0, 2 * Math.PI);
             if (points[1] == 1) {
-                background.strokeText("Tervete nature park", 120, 190);
+                background.strokeText("Tērvetes dabas parks", 120, 190);
             }
             background.stroke();
 
@@ -239,7 +241,7 @@
             background.beginPath();
             background.arc(282, 100, 12, 0, 2 * Math.PI);
             if (points[2] == 1) {
-                background.strokeText("Gauja", 265, 80);
+                background.strokeText("Gaujas Nacionālais parks", 265, 80);
             }
             background.stroke();
 
@@ -255,7 +257,7 @@
             background.beginPath();
             // background.strokeStyle = '#ff0000';
             background.arc(202, 157, 12, 0, 2 * Math.PI);
-            background.strokeText("Ryga", 185, 140);
+            background.strokeText("Rīga", 185, 140);
             background.stroke();
         }
     </script>
