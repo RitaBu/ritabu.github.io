@@ -78,7 +78,7 @@ function runCode() {
                         stopAnim();
                         stopDance();
                         musicStop();
-                        alert("Panaudok 4 skirtingus šokio judesius");}
+                        alert("Izmanto visas 4 deju kustības šokio judesius");}
                 }
             }
             nextStep();
