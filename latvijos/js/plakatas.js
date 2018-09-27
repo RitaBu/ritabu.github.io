@@ -55,7 +55,7 @@
             if (code.length > 0) {
                 eval(code);
             } else {
-                alert('Pievienot bloku.');
+                alert('Izmanto programmēšanas blokus');
             }
 
         } catch (e) {
