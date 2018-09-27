@@ -84,11 +84,11 @@ function runCode() {
             nextStep();
 
         } else {
-            alert('Pridėk kodo blokelį.');
+            alert('Izmanto programmēšanas blokus');
         }
 
     } catch (e) {
-        alert('Klaida! Patikrink blokelius');
+        alert('Kļūda! Lūdzu, pārbaudi blokus');
     }
 }
 
