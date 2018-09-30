@@ -282,7 +282,7 @@
 	"LISTS_SORT_TYPE_NUMERIC": "skaitliski",
 	"LISTS_SORT_TYPE_TEXT": "pēc alfabēta",
 	"LISTS_SORT_TYPE_IGNORECASE": "pēc alfabēta, ignorēt mazos/lielos burtus",
-	"LISTS_SPLIT_LIST_FROM_TEXT": "vārdu saraksts no teksta",
+	"LISTS_SPLIT_LIST_FROM_TEXT": "vārdu virkne no teksta",
 	"LISTS_SPLIT_TEXT_FROM_LIST": "izveidot tekstu no saraksta",
 	"LISTS_SPLIT_WITH_DELIMITER": "ar atdalītāju",
 	"LISTS_SPLIT_TOOLTIP_SPLIT": "Sadalīt tekstu vārdos izmantojot atdalītāju.",

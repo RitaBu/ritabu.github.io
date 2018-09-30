@@ -100,7 +100,7 @@ Blockly.Blocks['ifas'] = {
             .appendField("Ja");
         this.appendStatementInput("do_reiksme")
             .setCheck(null)
-            .appendField("darīt");
+            .appendField("tad");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(210);
@@ -120,7 +120,7 @@ Blockly.JavaScript['ifas'] = function(block) {
 Blockly.Blocks['convert'] = {
     init: function() {
         this.appendDummyInput()
-            .appendField("konvertēt");
+            .appendField("mainīt naudu");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(230);

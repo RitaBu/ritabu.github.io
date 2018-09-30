@@ -21,7 +21,8 @@ Blockly.Blocks['keisti'] = {
                 ["karogs", "veliava"],
                 ["zila cepure", "kepure"],
                 ["brilles", "akiniai"]
-            ]), "color");
+            ]), "color")
+            .appendField("tad");
         this.appendStatementInput("IF")
             .setCheck(null);
         this.setPreviousStatement(true, null);
