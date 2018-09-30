@@ -228,7 +228,7 @@ Blockly.JavaScript['anim_speed'] = function(block) {
 Blockly.Blocks['wait_seconds'] = {
     init: function() {
         this.appendDummyInput()
-            .appendField("turpināt")
+            .appendField("gaidīt")
             .appendField(new Blockly.FieldTextInput("1"), "SECONDS")
             .appendField("sek");
         this.setPreviousStatement(true);

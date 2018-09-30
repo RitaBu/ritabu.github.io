@@ -171,7 +171,7 @@
 	"MATH_CONSTRAIN_TITLE": "ierobežot %1 no %2 līdz %3",
 	"MATH_CONSTRAIN_TOOLTIP": "Ierobežo skaitli no noteiktajās robežās (ieskaitot galapunktus).",
 	"MATH_RANDOM_INT_HELPURL": "https://en.wikipedia.org/wiki/Random_number_generation",
-	"MATH_RANDOM_INT_TITLE": "nejaušs vesels skaitlis no %1 līdz %2",
+	"MATH_RANDOM_INT_TITLE": "nejaušs skaitlis no %1 līdz %2",
 	"MATH_RANDOM_INT_TOOLTIP": "Atgriež nejaušu veselu skaitli dotajās robežās (iekļaujot galapunktus)",
 	"MATH_RANDOM_FLOAT_HELPURL": "https://en.wikipedia.org/wiki/Random_number_generation",
 	"MATH_RANDOM_FLOAT_TITLE_RANDOM": "nejaušs skaitlis [0..1)",

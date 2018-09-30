@@ -104,7 +104,7 @@
                                     data-placement="top"
                                     data-trigger="focus"
                                     title=""
-                                    data-text="Sākumā iegriez bumbu un liec tai griezties">1</a>
+                                    data-text="Sākumā iegriez bumbu un liec tai grieztie">1</a>
                             </li>
                             <li>
                                 <a tabindex="0"
@@ -223,10 +223,10 @@
         var ball_speed = 0;
         var globalID;
         var globalID2;
-        var seconds = 60;
+        var seconds = 30;
         var timer;
         document.getElementById("ball").style.visibility = "hidden";
-        document.getElementById("time_counter").innerHTML = "60s";
+        document.getElementById("time_counter").innerHTML = "30s";
 
         function runCode() {
             stopInterval();
@@ -244,13 +244,13 @@
             slap_ball = false;
             spin_ball = false;
             ball_speed = 3;
-            seconds = 60;
+            seconds = 30;
             document.getElementById("ball").style.animationDuration = "0s";
             document.getElementById("ball").style.visibility = "hidden";
             document.getElementById("ball").style.transform = "translate(0px, 0px)";
             // document.getElementById("player").style.animationDuration = "0s";
             // document.getElementById("player").style.animationIterationCount = 0;
-            document.getElementById("time_counter").innerHTML = "60s";
+            document.getElementById("time_counter").innerHTML = "30s";
             canvas2.removeEventListener("click", onClick, false);
             window.LoopTrap = 1000;
             Blockly.JavaScript.INFINITE_LOOP_TRAP =
@@ -298,7 +298,7 @@
             ctx.fillStyle = "black";
             ctx.font = "20px Arial";
             // ctx.fillText("Speed: " + (1 / parseFloat(x)).toFixed(2), 60, 20);
-            ctx.fillText("Speed: " + (1 / parseFloat(x)).toFixed(2), 60, 20);
+            ctx.fillText("Speed: " + (1 / parseFloat(x)).toFixed(2), 30, 20);
             ctx.restore();
         }
 
@@ -397,7 +397,7 @@
         // timer
 
         function myFunction() {
-            if (seconds < 60) { // I want it to say 1:00, not 60
+            if (seconds < 30) { // I want it to say 1:00, not 60
                 document.getElementById("time_counter").innerHTML = seconds + "s";
             }
             if (seconds > 0) { // so it doesn't go to -1
