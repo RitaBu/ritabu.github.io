@@ -95,7 +95,7 @@ Blockly.JavaScript['go_back'] = function(block) {
 Blockly.Blocks['blocks'] = {
     init: function() {
         this.appendDummyInput()
-            .appendField(new Blockly.FieldNumber(0, 0, 7), "block")
+            .appendField(new Blockly.FieldNumber(0, 0, 11), "block")
             .appendField("laukumi ");
         this.setOutput(true, null);
         this.setColour(330);
@@ -138,11 +138,8 @@ Blockly.JavaScript['wait_seconds'] = function(block) {
 
 
 function changePoints(x, y) {
-    //console.log(x)
     if (x != 0 || y != 0) {
-
         globalID = requestAnimationFrame(function() { changePoints(x, y); });
-
     } else {
         cancelAnimationFrame(globalID);
     }
@@ -167,9 +164,8 @@ function changePoints(x, y) {
         plain_y -= 1;
         y += 1;
     }
-
-
 }
+
 function checkEnd(){
 	   if (points[0] == 1 && points[1] == 1 && points[2] == 1 && points[3] == 1) {
         setTimeout(function() {
@@ -189,33 +185,21 @@ if (48 >= x && x >= 18 && 82 >= y && y >= 72) {
         points[0] = 1;
         background.drawImage(map, 0, 0);
         drawGrid();
-       // background.strokeStyle = 'black';
-        //background.font = "12px Arial";
-        //background.strokeText("Jūrkalne", 25, 125);
     } else if (150 >= x && x >= 140 && 125 >= y && y >= 115) {
         background.clearRect(0, 0, canvas.width, canvas.height);
         points[1] = 1;
         background.drawImage(map, 0, 0);
         drawGrid();
-        //background.strokeStyle = 'black';
-        //background.font = "12px Arial";
-        //background.strokeText("Tervete nature park", 120, 190);
     } else if (270 >= x && x >= 260 && 45 >= y && y >= 35) {
         background.clearRect(0, 0, canvas.width, canvas.height);
         points[2] = 1;
         background.drawImage(map, 0, 0);
         drawGrid();
-        //background.strokeStyle = 'black';
-        //background.font = "12px Arial";
-        //background.strokeText("Gauja", 265, 80);
     } else if (350 >= x && x >= 340 && 205 >= y && y >= 195) {
         background.clearRect(0, 0, canvas.width, canvas.height);
         points[3] = 1;
         background.drawImage(map, 0, 0);
         drawGrid();
-        //background.strokeStyle = 'black';
-        //background.font = "12px Arial";
-        //background.strokeText("Daugavas loki", 340, 255);
     }
     checkEnd();
 }
