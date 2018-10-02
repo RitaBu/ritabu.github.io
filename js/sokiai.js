@@ -78,17 +78,17 @@ function runCode() {
                         stopAnim();
                         stopDance();
                         musicStop();
-                        alert("Panaudok 4 skirtingus šokio judesius");}
+                        alert("Izmanto visas 4 deju kustības šokio judesius");}
                 }
             }
             nextStep();
 
         } else {
-            alert('Pridėk kodo blokelį.');
+            alert('Izmanto programmēšanas blokus');
         }
 
     } catch (e) {
-        alert('Klaida! Patikrink blokelius');
+        alert('Kļūda! Lūdzu, pārbaudi blokus');
     }
 }
 
@@ -201,7 +201,7 @@ function initApi(interpreter, scope) {
 }
 
 
-var audio = new Audio('../Kepurine.mp3');
+var audio = new Audio('../sudmalinas.mp3');
 audio.pause();
 
 audio.currentTime = 0;
@@ -209,11 +209,11 @@ Blockly.Blocks['anim_speed'] = {
     init: function() {
         this.appendValueInput("ANIM_SPEED")
             .setCheck(null)
-            .appendField("judesių greitis (s) = ");
+            .appendField("kustības ātrums (sek)");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(330);
-        this.setTooltip("Šokio judesių greitis");
+        this.setTooltip("");
         this.setHelpUrl("");
     }
 };
@@ -228,9 +228,9 @@ Blockly.JavaScript['anim_speed'] = function(block) {
 Blockly.Blocks['wait_seconds'] = {
     init: function() {
         this.appendDummyInput()
-            .appendField("atlikti veiksmą")
+            .appendField("gaidīt")
             .appendField(new Blockly.FieldTextInput("1"), "SECONDS")
-            .appendField("s");
+            .appendField("sek");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setColour(120);
@@ -253,7 +253,7 @@ Blockly.JavaScript['wait_seconds'] = function(block) {
 Blockly.Blocks['musicplay'] = {
     init: function() {
         this.appendDummyInput()
-            .appendField("groti muziką");
+            .appendField("atskaņot mūziku");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(230);
@@ -269,7 +269,7 @@ Blockly.JavaScript['musicplay'] = function(block) {
 Blockly.Blocks['dance'] = {
     init: function() {
         this.appendDummyInput()
-            .appendField("judesys")
+            .appendField("kustība")
             .appendField(new Blockly.FieldDropdown([
                 ["1", "1"],
                 ["2", "2"],
@@ -295,8 +295,8 @@ Blockly.Blocks['rotate'] = {
     init: function() {
         this.appendDummyInput()
             .appendField(new Blockly.FieldDropdown([
-                ["suktis ratu", "spin"],
-                ["šokti vietoje", "stop"]
+                ["griezties", "spin"],
+                ["dejot uz vietas", "stop"]
             ]), "sukimasis");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);

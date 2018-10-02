@@ -3,7 +3,7 @@ Blockly.Blocks['spalva'] = {
   init: function() {
     this.appendValueInput("spalva")
         .setCheck(null)
-        .appendField("Raidės spalva");
+        .appendField("Burtu krāsa");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
@@ -11,6 +11,7 @@ Blockly.Blocks['spalva'] = {
  this.setHelpUrl("");
   }
 };
+
 Blockly.JavaScript['spalva'] = function(block) {
   var value_spalva = Blockly.JavaScript.valueToCode(block, 'spalva', Blockly.JavaScript.ORDER_NONE);
   // TODO: Assemble JavaScript into code variable.
@@ -21,7 +22,7 @@ Blockly.JavaScript['spalva'] = function(block) {
  Blockly.Blocks['storis'] = {
   init: function() {
     this.appendValueInput("storis")
-        .appendField("Linijos storis")
+        .appendField("Līnijas biezums")
         .setCheck(null)
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -42,7 +43,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Rėmelis")
+             .appendField("Rāmis")
          this.setInputsInline(false);
          this.setNextStatement(true, null);
          this.setColour(0);
@@ -63,7 +64,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė A")
+             .appendField("Burts A")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -83,11 +84,11 @@ Blockly.JavaScript['storis'] = function(block) {
  };
  
 
-  Blockly.Blocks['raide_Ą'] = {
+  Blockly.Blocks['raide_Ā'] = {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė Ą")
+             .appendField("Burts Ā")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -96,11 +97,11 @@ Blockly.JavaScript['storis'] = function(block) {
          this.setHelpUrl("");
      }
  };
- Blockly.JavaScript['raide_Ą'] = function(block) {
+ Blockly.JavaScript['raide_Ā'] = function(block) {
      //.arc(x, y, radius, startAngle, endAngle)
      var x = block.getFieldValue('XPOS');
      var y = block.getFieldValue('YPOS');
-     var code = 'ctx.beginPath();\n ctx.moveTo(200, 100);\n ctx.lineTo(150, 200);\n ctx.moveTo(200, 100);\n ctx.lineTo(250, 200);\n ctx.lineTo(250, 210);\n ctx.lineTo(260, 210);\n ctx.stroke();\n';
+     var code = 'ctx.beginPath();\n ctx.moveTo(200, 100);\n ctx.lineTo(150, 200);\n ctx.moveTo(200, 100);\n ctx.lineTo(250, 200);\n ctx.moveTo(170, 90); ctx.lineTo(230, 90); ctx.stroke();\n';
     
      // interval += 100;
      // code = setInterval(code, interval);
@@ -110,7 +111,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė B")
+             .appendField("Burts B")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -133,7 +134,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė C")
+             .appendField("Burts C")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -152,11 +153,37 @@ Blockly.JavaScript['storis'] = function(block) {
      // code = setInterval(code, interval);
      return code;
  };
+
+ Blockly.Blocks['raide_CH'] = {
+     // draw a line from current position to x,y
+     init: function() {
+         this.appendDummyInput()
+             .appendField("Burts CH")
+         this.setInputsInline(false);
+         this.setPreviousStatement(true, null);
+         this.setNextStatement(true, null);
+         this.setColour(260);
+         this.setTooltip("");
+         this.setHelpUrl("");
+     }
+ };
+ Blockly.JavaScript['raide_CH'] = function(block) {
+     //.arc(x, y, radius, startAngle, endAngle)
+     var x = block.getFieldValue('XPOS');
+     var y = block.getFieldValue('YPOS');
+     var code = 'ctx.beginPath();\n ctx.arc(' + 200 + ',' + 150 + ',50, 7, 1.7 * Math.PI);\n ctx.stroke();\n ctx.beginPath();\n ctx.moveTo(150, 100);\n ctx.lineTo(150, 200);\n ctx.moveTo(250, 100);\n ctx.lineTo(250, 200);\n ctx.moveTo(150, 150);\n ctx.lineTo(250, 150);\n ctx.stroke();\n';
+
+
+     // interval += 100;
+     // code = setInterval(code, interval);
+     return code;
+ };
+
   Blockly.Blocks['raide_Č'] = {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė Č")
+             .appendField("Burts Č")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -179,7 +206,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė D")
+             .appendField("Burts D")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -203,7 +230,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė E")
+             .appendField("Burts E")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -223,11 +250,35 @@ Blockly.JavaScript['storis'] = function(block) {
      return code;
  };
 
-  Blockly.Blocks['raide_Ę'] = {
+ //  Blockly.Blocks['raide_Ę'] = {
+ //     // draw a line from current position to x,y
+ //     init: function() {
+ //         this.appendDummyInput()
+ //             .appendField("Burts Ę")
+ //         this.setInputsInline(false);
+ //         this.setPreviousStatement(true, null);
+ //         this.setNextStatement(true, null);
+ //         this.setColour(260);
+ //         this.setTooltip("");
+ //         this.setHelpUrl("");
+ //     }
+ // };
+
+ // Blockly.JavaScript['raide_Ę'] = function(block) {
+ //     //.arc(x, y, radius, startAngle, endAngle)
+ //     var x = block.getFieldValue('XPOS');
+ //     var y = block.getFieldValue('YPOS');
+ //     var code = 'ctx.beginPath();\n ctx.moveTo(250, 100);\n ctx.lineTo(150, 100);\n ctx.lineTo(150, 200);\n ctx.lineTo(250, 200);\n ctx.moveTo(150, 150);\n ctx.lineTo(250, 150);\n ctx.moveTo(250, 200);\n ctx.lineTo(250, 210);\n ctx.lineTo(260, 210);\nctx.stroke();\n';
+ //     // interval += 100;
+ //     // code = setInterval(code, interval);
+ //     return code;
+ // };
+
+ Blockly.Blocks['raide_Ē'] = {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė Ę")
+             .appendField("Burts Ē")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -237,31 +288,7 @@ Blockly.JavaScript['storis'] = function(block) {
      }
  };
 
- Blockly.JavaScript['raide_Ę'] = function(block) {
-     //.arc(x, y, radius, startAngle, endAngle)
-     var x = block.getFieldValue('XPOS');
-     var y = block.getFieldValue('YPOS');
-     var code = 'ctx.beginPath();\n ctx.moveTo(250, 100);\n ctx.lineTo(150, 100);\n ctx.lineTo(150, 200);\n ctx.lineTo(250, 200);\n ctx.moveTo(150, 150);\n ctx.lineTo(250, 150);\n ctx.moveTo(250, 200);\n ctx.lineTo(250, 210);\n ctx.lineTo(260, 210);\nctx.stroke();\n';
-     // interval += 100;
-     // code = setInterval(code, interval);
-     return code;
- };
-
- Blockly.Blocks['raide_Ė'] = {
-     // draw a line from current position to x,y
-     init: function() {
-         this.appendDummyInput()
-             .appendField("Raidė Ė")
-         this.setInputsInline(false);
-         this.setPreviousStatement(true, null);
-         this.setNextStatement(true, null);
-         this.setColour(260);
-         this.setTooltip("");
-         this.setHelpUrl("");
-     }
- };
-
- Blockly.JavaScript['raide_Ė'] = function(block) {
+ Blockly.JavaScript['raide_Ē'] = function(block) {
      //.arc(x, y, radius, startAngle, endAngle)
      var x = block.getFieldValue('XPOS');
      var y = block.getFieldValue('YPOS');
@@ -276,7 +303,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė F")
+             .appendField("Burts F")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -300,7 +327,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė G")
+             .appendField("Burts G")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -319,12 +346,35 @@ Blockly.JavaScript['storis'] = function(block) {
      // code = setInterval(code, interval);
      return code;
  };
+   Blockly.Blocks['raide_Ģ'] = {
+     // draw a line from current position to x,y
+     init: function() {
+         this.appendDummyInput()
+             .appendField("Burts Ģ")
+         this.setInputsInline(false);
+         this.setPreviousStatement(true, null);
+         this.setNextStatement(true, null);
+         this.setColour(260);
+         this.setTooltip("");
+         this.setHelpUrl("");
+     }
+ };
+
+ Blockly.JavaScript['raide_Ģ'] = function(block) {
+     //.arc(x, y, radius, startAngle, endAngle)
+     var x = block.getFieldValue('XPOS');
+     var y = block.getFieldValue('YPOS');
+     var code =  'ctx.beginPath();\n ctx.arc(' + 200 + ',' + 150 + ',50, 7, 1.7 * Math.PI);\n ctx.stroke();\n ctx.moveTo(240, 200);\n ctx.lineTo(240, 150);\n ctx.lineTo(200, 150);\n ctx.moveTo(200, 200);\n  ctx.lineTo(200, 210);\n ctx.lineTo(210, 210);\n ctx.stroke();\n';
+     // interval += 100;
+     // code = setInterval(code, interval);
+     return code;
+ };
 
  Blockly.Blocks['raide_H'] = {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė H")
+             .appendField("Burts H")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -348,7 +398,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė I")
+             .appendField("Burts I")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -367,11 +417,11 @@ Blockly.JavaScript['storis'] = function(block) {
      return code;
  };
 
-  Blockly.Blocks['raide_Į'] = {
+  Blockly.Blocks['raide_Ī'] = {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė Į")
+             .appendField("Burts Ī")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -380,42 +430,21 @@ Blockly.JavaScript['storis'] = function(block) {
          this.setHelpUrl("");
      }
  };
- Blockly.JavaScript['raide_Į'] = function(block) {
+ Blockly.JavaScript['raide_Ī'] = function(block) {
      //.arc(x, y, radius, startAngle, endAngle)
      var x = block.getFieldValue('XPOS');
      var y = block.getFieldValue('YPOS');
-     var code = 'ctx.beginPath();\n ctx.moveTo(170, 100);\n ctx.lineTo(230, 100);\n ctx.moveTo(200, 100);\n ctx.lineTo(200, 200);\n ctx.moveTo(170, 200);\n ctx.lineTo(230, 200);\n ctx.lineTo(230, 210);\n ctx.lineTo(240, 210);\n ctx.stroke();\n';
+     var code = 'ctx.beginPath();\n ctx.moveTo(170, 100);\n ctx.lineTo(230, 100);\n ctx.moveTo(200, 100);\n ctx.lineTo(200, 200);\n ctx.moveTo(170, 200);\n ctx.lineTo(230, 200);\n ctx.lineTo(230, 210);\n ctx.lineTo(240, 210);\n ctx.moveTo(170, 90); ctx.lineTo(230, 90);ctx.stroke();\n';
      // interval += 100;
      // code = setInterval(code, interval);
      return code;
  };
-  Blockly.Blocks['raide_Y'] = {
-     // draw a line from current position to x,y
-     init: function() {
-         this.appendDummyInput()
-             .appendField("Raidė Y")
-         this.setInputsInline(false);
-         this.setPreviousStatement(true, null);
-         this.setNextStatement(true, null);
-         this.setColour(260);
-         this.setTooltip("");
-         this.setHelpUrl("");
-     }
- };
- Blockly.JavaScript['raide_Y'] = function(block) {
-     //.arc(x, y, radius, startAngle, endAngle)
-     var x = block.getFieldValue('XPOS');
-     var y = block.getFieldValue('YPOS');
-     var code = 'ctx.beginPath();\n ctx.moveTo(150, 100);\n ctx.lineTo(200, 150);\n ctx.moveTo(200, 200);\n ctx.lineTo(200, 150);\n ctx.lineTo(250, 100);\n ctx.stroke();\n';
-     // interval += 100;
-     // code = setInterval(code, interval);
-     return code;
- };
+
  Blockly.Blocks['raide_J'] = {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė J")
+             .appendField("Burts J")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -437,7 +466,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė K")
+             .appendField("Burts K")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -455,11 +484,33 @@ Blockly.JavaScript['storis'] = function(block) {
      // code = setInterval(code, interval);
      return code;
  };
+   Blockly.Blocks['raide_Ķ'] = {
+     // draw a line from current position to x,y
+     init: function() {
+         this.appendDummyInput()
+             .appendField("Burts Ķ")
+         this.setInputsInline(false);
+         this.setPreviousStatement(true, null);
+         this.setNextStatement(true, null);
+         this.setColour(260);
+         this.setTooltip("");
+         this.setHelpUrl("");
+     }
+ };
+ Blockly.JavaScript['raide_Ķ'] = function(block) {
+     //.arc(x, y, radius, startAngle, endAngle)
+     var x = block.getFieldValue('XPOS');
+     var y = block.getFieldValue('YPOS');
+     var code = 'ctx.beginPath();\n ctx.moveTo(200, 100);\n ctx.lineTo(200, 200);\n ctx.moveTo(200, 150);\n ctx.lineTo(250, 100);\n ctx.moveTo(200, 150);\n ctx.lineTo(250, 200);\n ctx.moveTo(200, 200);\n  ctx.lineTo(200, 210);\n ctx.lineTo(210, 210);\n ctx.stroke();\n';
+     // interval += 100;
+     // code = setInterval(code, interval);
+     return code;
+ };
   Blockly.Blocks['raide_L'] = {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė L")
+             .appendField("Burts L")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -477,11 +528,33 @@ Blockly.JavaScript['storis'] = function(block) {
      // code = setInterval(code, interval);
      return code;
  };
+   Blockly.Blocks['raide_Ļ'] = {
+     // draw a line from current position to x,y
+     init: function() {
+         this.appendDummyInput()
+             .appendField("Burts Ļ")
+         this.setInputsInline(false);
+         this.setPreviousStatement(true, null);
+         this.setNextStatement(true, null);
+         this.setColour(260);
+         this.setTooltip("");
+         this.setHelpUrl("");
+     }
+ };
+ Blockly.JavaScript['raide_Ļ'] = function(block) {
+     //.arc(x, y, radius, startAngle, endAngle)
+     var x = block.getFieldValue('XPOS');
+     var y = block.getFieldValue('YPOS');
+     var code = 'ctx.beginPath();\n ctx.moveTo(200, 100);\n ctx.lineTo(200, 200);\n ctx.lineTo(250, 200);\n ctx.moveTo(200, 200);\n  ctx.lineTo(200, 210);\n ctx.lineTo(210, 210);\n ctx.stroke();\n';
+     // interval += 100;
+     // code = setInterval(code, interval);
+     return code;
+ };
    Blockly.Blocks['raide_M'] = {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė M")
+             .appendField("Burts M")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -504,7 +577,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė N")
+             .appendField("Burts N")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -522,11 +595,33 @@ Blockly.JavaScript['storis'] = function(block) {
      // code = setInterval(code, interval);
      return code;
  };
+    Blockly.Blocks['raide_Ņ'] = {
+     // draw a line from current position to x,y
+     init: function() {
+         this.appendDummyInput()
+             .appendField("Burts Ņ")
+         this.setInputsInline(false);
+         this.setPreviousStatement(true, null);
+         this.setNextStatement(true, null);
+         this.setColour(260);
+         this.setTooltip("");
+         this.setHelpUrl("");
+     }
+ };
+ Blockly.JavaScript['raide_Ņ'] = function(block) {
+     //.arc(x, y, radius, startAngle, endAngle)
+     var x = block.getFieldValue('XPOS');
+     var y = block.getFieldValue('YPOS');
+     var code = 'ctx.beginPath();\n ctx.moveTo(150, 200);\n ctx.lineTo(150, 100);\n ctx.lineTo(250, 200);\n ctx.lineTo(250, 100);\n ctx.moveTo(200, 200);\n  ctx.lineTo(200, 210);\n ctx.lineTo(210, 210);\n ctx.stroke();\n';
+     // interval += 100;
+     // code = setInterval(code, interval);
+     return code;
+ };
  Blockly.Blocks['raide_O'] = {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė O")
+             .appendField("Burts O")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -544,11 +639,33 @@ Blockly.JavaScript['storis'] = function(block) {
      // code = setInterval(code, interval);
      return code;
  };
+  Blockly.Blocks['raide_Ō'] = {
+     // draw a line from current position to x,y
+     init: function() {
+         this.appendDummyInput()
+             .appendField("Burts Ō")
+         this.setInputsInline(false);
+         this.setPreviousStatement(true, null);
+         this.setNextStatement(true, null);
+         this.setColour(260);
+         this.setTooltip("");
+         this.setHelpUrl("");
+     }
+ };
+ Blockly.JavaScript['raide_Ō'] = function(block) {
+     //.arc(x, y, radius, startAngle, endAngle)
+     var x = block.getFieldValue('XPOS');
+     var y = block.getFieldValue('YPOS');
+     var code = 'ctx.beginPath();ctx.arc(' + 200 + ',' + 150 + ',50,0,2*Math.PI);ctx.moveTo(170, 90); ctx.lineTo(230, 90);ctx.stroke();\n';
+     // interval += 100;
+     // code = setInterval(code, interval);
+     return code;
+ };
     Blockly.Blocks['raide_P'] = {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė P")
+             .appendField("Burts P")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -571,7 +688,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė R")
+             .appendField("Burts R")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -589,13 +706,34 @@ Blockly.JavaScript['storis'] = function(block) {
      // code = setInterval(code, interval);
      return code;
  };
-
+     Blockly.Blocks['raide_Ŗ'] = {
+     // draw a line from current position to x,y
+     init: function() {
+         this.appendDummyInput()
+             .appendField("Burts Ŗ")
+         this.setInputsInline(false);
+         this.setPreviousStatement(true, null);
+         this.setNextStatement(true, null);
+         this.setColour(260);
+         this.setTooltip("");
+         this.setHelpUrl("");
+     }
+ };
+ Blockly.JavaScript['raide_Ŗ'] = function(block) {
+     //.arc(x, y, radius, startAngle, endAngle)
+     var x = block.getFieldValue('XPOS');
+     var y = block.getFieldValue('YPOS');
+     var code = 'ctx.beginPath();\n ctx.moveTo(150, 200);\n ctx.lineTo(150, 100);\n ctx.lineTo(200, 100);\n ctx.lineTo(250, 125);\n ctx.lineTo(200, 150);\n ctx.lineTo(150, 150);\nctx.lineTo(250, 200);\n ctx.moveTo(200, 200);\n  ctx.lineTo(200, 210);\n ctx.lineTo(210, 210);\nctx.stroke();\n';
+     // interval += 100;
+     // code = setInterval(code, interval);
+     return code;
+ };
 
  Blockly.Blocks['raide_S'] = {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė S")
+             .appendField("Burts S")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -618,7 +756,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė Š")
+             .appendField("Burts Š")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -641,7 +779,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė T")
+             .appendField("Burts T")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -663,7 +801,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          // this.appendDummyInput()
-         // .appendField("Raidė U")
+         // .appendField("Burts U")
          //     .appendField(new Blockly.FieldDropdown([
          //         ["x"],["20"],
          //     ]), "XPOS")
@@ -677,7 +815,7 @@ Blockly.JavaScript['storis'] = function(block) {
          // this.setTooltip("");
          // this.setHelpUrl("");
          this.appendDummyInput()
-             .appendField("Raidė U")
+             .appendField("Burts U")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -701,7 +839,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė Ū")
+             .appendField("Burts Ū")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -720,34 +858,34 @@ Blockly.JavaScript['storis'] = function(block) {
      // code = setInterval(code, interval);
      return code;
  };
-  Blockly.Blocks['raide_Ų'] = {
-     // draw a line from current position to x,y
-     init: function() {
-         this.appendDummyInput()
-             .appendField("Raidė Ų")
-         this.setInputsInline(false);
-         this.setPreviousStatement(true, null);
-         this.setNextStatement(true, null);
-         this.setColour(260);
-         this.setTooltip("");
-         this.setHelpUrl("");
-     }
- };
- Blockly.JavaScript['raide_Ų'] = function(block) {
-     //.arc(x, y, radius, startAngle, endAngle)
-     var x = block.getFieldValue('XPOS');
-     var y = block.getFieldValue('YPOS');
-    // var code = 'ctx.beginPath();ctx.arc(' + 200 + ',' + 150 + ',50,0,Math.PI);ctx.stroke();\n';
-     var code ='ctx.beginPath();\n ctx.bezierCurveTo(150, 100, 200, 325, 250, 100);\n ctx.moveTo(200, 200);\n  ctx.lineTo(200, 210);\n ctx.lineTo(210, 210);\n  ctx.stroke();\n';
-     // interval += 100;
-     // code = setInterval(code, interval);
-     return code;
- };
+ //  Blockly.Blocks['raide_Ų'] = {
+ //     // draw a line from current position to x,y
+ //     init: function() {
+ //         this.appendDummyInput()
+ //             .appendField("Burts Ų")
+ //         this.setInputsInline(false);
+ //         this.setPreviousStatement(true, null);
+ //         this.setNextStatement(true, null);
+ //         this.setColour(260);
+ //         this.setTooltip("");
+ //         this.setHelpUrl("");
+ //     }
+ // };
+ // Blockly.JavaScript['raide_Ų'] = function(block) {
+ //     //.arc(x, y, radius, startAngle, endAngle)
+ //     var x = block.getFieldValue('XPOS');
+ //     var y = block.getFieldValue('YPOS');
+ //    // var code = 'ctx.beginPath();ctx.arc(' + 200 + ',' + 150 + ',50,0,Math.PI);ctx.stroke();\n';
+ //     var code ='ctx.beginPath();\n ctx.bezierCurveTo(150, 100, 200, 325, 250, 100);\n ctx.moveTo(200, 200);\n  ctx.lineTo(200, 210);\n ctx.lineTo(210, 210);\n  ctx.stroke();\n';
+ //     // interval += 100;
+ //     // code = setInterval(code, interval);
+ //     return code;
+ // };
    Blockly.Blocks['raide_V'] = {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė V")
+             .appendField("Burts V")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -769,7 +907,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė Z")
+             .appendField("Burts Z")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);
@@ -791,7 +929,7 @@ Blockly.JavaScript['storis'] = function(block) {
      // draw a line from current position to x,y
      init: function() {
          this.appendDummyInput()
-             .appendField("Raidė Ž")
+             .appendField("Burts Ž")
          this.setInputsInline(false);
          this.setPreviousStatement(true, null);
          this.setNextStatement(true, null);

@@ -1,39 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css"
+        rel="stylesheet">
+    <link href="../css/style.css"
+        rel="stylesheet">
 </head>
-<style>
-@import url('https://fonts.googleapis.com/css?family=Lekton:700&subset=latin-ext');
-#preview {
-    font-family: Lekton;
-    font-size: 12px;
-    color: black;
-    background-image: url("../img_lessons/basanavicius/dokumentas.png");
-}
-
-#preview_text {
-    padding: 22px 40px 10px 25px;
-}
-
-#list {
-    padding: 22px 40px 10px 25px;
-}
-</style>
-<!-- font-family: 'Lekton', sans-serif; -->
 
 <body>
     <div class='customAlert'>
         <p class='message'></p>
-        <input type='button' class='confirmButton' value='Gerai'>
+        <input type='button'
+            class='confirmButton'
+            value='Labi'>
     </div>
     <div class="container-fluid header-top">
-        <a href="../index.html"><img class="header_logo img-fluid" src="../img_lessons/100_small1.png"></a>
+        <a href="../index.html">
+            <img class="header_logo img-fluid" src="../100/100_small1.png">
+        </a>
         <div class="progress-container">
             <ul style="text-align: center;">
                 <li>
@@ -70,221 +60,321 @@
         </div>
     </div>
     <div class="container-fluid working-space">
-        <div class="row" style="padding: 10px;">
+        <div class="row"
+            style="padding: 10px;">
             <div class="col-md-5">
-                <h4>1. Jonas Basanavičius: žodžiai, žodžiai, susivykit</h4></div>
-            <div class=" col-md-7" id="task"> „Lietuvos Taryba savo posėdyje vasario 16 d. 1918 m. vienu balsu nutarė kreiptis: į Rusijos, Vokietijos ir kitų valstybių vyriausybės šiuo pareiškimu: [...]“<br>
-Tai - Nepriklausomybės akto pradžia, o tęsinyje žodžiai susivijo. Grąžink pasimetusias eilutes į jų vietas.
-Dešinėje ekrano pusėje rasi reikiamus kodo blokelius. Užduotį įveiksi, juos sujungęs tam tikra tvarka. Savo užduoties sprendimą išvysi nuspaudęs mygtuką „Paleisti“.
-                <a href="javascript:void(0)" onclick="changeVideo('tdYGNqb2zgU')">Užduoties video</a> </div>
+                <h4>1. Dodies ceļā, Milda</h4>
+            </div>
+            <div class=" col-md-7"
+                id="task"> 
+                Palīdzi Mildai apceļot visus Latvijas novadus un apskatīt tajos esošos dabas objektus - 
+                Jūrkalni Kurzemē, Tērvetes dabas parku Zemgalē, Daugavas lokus Latgalē un Gaujas Nacionālo 
+                parku Vidzemē! Savieno blokus ar norādēm un uzprogrammē Mildas ceļu, lai viņa pieskartos 
+                visiem punktiem.
+            </div>
         </div>
-        <div class="row" style="padding: 10px">
+        <div class="row"
+            style="padding: 10px">
             <div class="col  ">
                 <div id="preview">
-                    <canvas id="canvas" width="490" height="330">
+                    <canvas id="canvas"
+                        width="490"
+                        height="330"
+                        style="z-index: 0">
                         This text is displayed if your browser does not support HTML5 Canvas.
                     </canvas>
-                    <div id="preview_text"></div>
-                    <div id="list"></div>
+                    <canvas id="canvas3"
+                        width="490"
+                        height="330">
+                        This text is displayed if your browser does not support HTML5 Canvas.
+                    </canvas>
+                    <div id="milda"></div>
                 </div>
                 <div class="button-panel">
-                    <button class="button-run btn btn-lg btn-secondary" onclick="runCode()">Paleisti </button>
+                    <button class="button-run btn btn-lg btn-secondary"
+                        onclick="runCode()">Starts </button>
                     <div class="hint-panel">
-                        <ul> Užuomina:
+                        <ul> Norāde:
                             <li>
-                                <a tabindex="0" href="javascript:void(0)" data-toggle="popover" data-placement="top" data-trigger="focus" title="" data-text="Pasirink eilutės numerį bei atsakymo raidę." data-full="../hints/L1T1_H1.png">1</a>
-                            </li>
-                            <li>
-                                <a tabindex="0" href="javascript:void(0)" data-toggle="popover" data-placement="top" data-trigger="focus" title="" data-text="Kartais nusirašyti - visai naudinga. Nutarimo tekstą rasi <a href='https://lt.wikipedia.org/wiki/Lietuvos_Nepriklausomyb%C4%97s_Aktas#/media/File:Nepriklausomybes_aktas.gif' target='_blank'>čia</a>." ">2</a>
+                                <a tabindex="0"
+                                    href="javascript:void(0)"
+                                    data-toggle="popover"
+                                    data-placement="top"
+                                    data-trigger="focus"
+                                    title=""
+                                    data-text="Vai apmeklēji visas četras ceļojuma vietas?">                                1
+                                </a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col" style="padding: 0 ;">
+            <div class="col"
+                style="padding: 0 ;">
                 <div id="blocklyDiv">
                 </div>
-                <xml id="toolbox" style="display: none">
-                    <category name="Skaičiai" colour="230">
-                        <block type="math_number"></block>
-                    </category>
-                    <category name="Tekstas" colour="160">
-                        <block type="tekstas1"></block>
-                        <block type="tekstas2"></block>
-                        <block type="tekstas3"></block>
-                    </category>
-                    <category name="Sąrašai" colour="#745CA6">
-                        <block type="lists_setIndex">
-                            <mutation at="true"></mutation>
-                            <field name="MODE">SET</field>
-                            <field name="WHERE">FROM_START</field>
-                            <value name="LIST">
-                                <block type="variables_get">
-                                    <field name="VAR" id="agSI/ogyCXtYTJxS:dXL" variabletype="">tekstas</field>
-                                </block>
-                            </value>
-                        </block>
-                    </category>
+                <xml id="toolbox"
+                    style="display: none">
+                    <block type="go_left">
+                    </block>
+                    <block type="go_right">
+                    </block>
+                    <block type="go_straight">
+                    </block>
+                    <block type="go_back">
+                    </block>
+                    <block type="blocks">
+                    </block>
                 </xml>
             </div>
-            <div class="col-md-3 col-lg-2" style="height: 70vh;">
-                <h5>Javascript kodas: </h5>
+            <div class="col-md-3 col-lg-2"
+                style="height: 70vh;">
+                <h5>Javascript kods: </h5>
                 <pre id="content_javascript">
                 </pre>
             </div>
         </div>
-        <div class="row">
-            <div class="logo-row"><img src="../100/logo13.png"><img src="../100/logo12.png"><img src="../100/logo14.png"></div>
-        </div>
-        <div class="video-modal">
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <iframe id="iframeYoutube" width="100%" height="315" src="https://www.youtube.com/embed/tdYGNqb2zgU" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Uždaryti</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="next-modal">
-            <div class="modal fade" id="nextModal" tabindex="-1" role="dialog" aria-labelledby="nextModalLabel">
-                <div class="modal-dialog" role="document">
-                   <div class="modal-content">
-                        <div class="modal-body">
-                            <div>
-                                <h3>Nutarimą turim!</h3>
-                            </div>
-                            <div class="modal-buttons">
-                                <a href="#" class="btn btn-secondary" data-dismiss="modal">Grįžti į užduotį</a>
-                                <a href="level1-2.html" class="btn btn-secondary">Kita užduotis</a>
+                <div class="modal fade"
+                     id="nextModal"
+                     tabindex="-1"
+                     role="dialog"
+                     aria-labelledby="nextModalLabel">
+                    <div class="modal-dialog"
+                         role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div>
+                                    <h3>Galamērķis sasniegts!</h3>
+                                </div>
+                                <div class="modal-buttons">
+                                    <a href="#"
+                                        id="close-next-modal"
+                                       class="btn btn-secondary"
+                                       data-dismiss="modal">Doties atpakaļ uz uzdevumu</a>
+                                    <a href="level1-2.html"
+                                       class="btn btn-secondary">Nākamais uzdevums</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <img style="visibility: hidden;">
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/acorn_interpreter.js"></script>
     <script src="../js/blockly_compressed.js"></script>
     <script src="../js/javascript_compressed.js"></script>
     <script src="../js/blocks_compressed.js"></script>
-    <script src="../msg/js/lt.js"></script>
+    <script src="../msg/js/lv.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/sarasai.js"></script>
+    <script src="../js/milda.js"></script>
+    <script type="text/javascript">
+        var my_canvas = document.getElementById("canvas");
+        var background = my_canvas.getContext("2d");
+        var map = new Image();
+        map.src = "../img_lessons/milda/background.png";
+        var map2 = new Image();
+        map2.src = "../img_lessons/milda/background2.png";
+        var m_done = new Image();
+        m_done.src = "../img_lessons/milda/milda-done.png";
+        var plain_x = 180;
+        var plain_y = 75;
+        var finished = false;
+        var points = [];
+
+        map.onload = function() {
+            //draw(map, 0, 0, 500,300); 
+            background.drawImage(map, 0, 0);
+            drawGrid();
+        }
+        
+        $("#close-next-modal").click(function() {
+            console.log("cliclicliclick");
+            cancelAnimationFrame(globalID);
+            $('#nextModal').modal('hide');
+        });
+
+        function drawGrid() {
+            background.strokeStyle = 'grey';
+            for (i = -2; i < 490; i += 40) {
+                background.beginPath();
+                background.moveTo(i, 0);
+                background.lineTo(i, 330);
+                background.stroke();
+            }
+            for (i = 12; i < 330; i += 40) {
+                background.beginPath();
+                background.moveTo(0, i);
+                background.lineTo(490, i);
+                background.stroke();
+            }
+            background.strokeStyle = 'black';
+            background.font = "14px Arial";
+
+            background.fillRect(45, 145, 4, 4);
+            background.beginPath();
+            background.arc(47, 147, 12, 0, 2 * Math.PI);
+            if (points[0] == 1) {
+                background.strokeText("Jūrkalne", 25, 125);
+            }
+            //background.strokeText("Jūrkalne", 25, 125);
+            background.stroke();
+
+            background.fillRect(165, 205, 4, 4);
+            background.beginPath();
+            background.arc(167, 207, 12, 0, 2 * Math.PI);
+            if (points[1] == 1) {
+                background.strokeText("Tērvetes dabas parks", 120, 190);
+            }
+            background.stroke();
+
+            background.fillRect(280, 98, 4, 4);
+            background.beginPath();
+            background.arc(282, 100, 12, 0, 2 * Math.PI);
+            if (points[2] == 1) {
+                background.strokeText("Gaujas Nacionālais parks", 265, 80);
+            }
+            background.stroke();
+
+            background.fillRect(380, 270, 4, 4);
+            background.beginPath();
+            background.arc(382, 272, 12, 0, 2 * Math.PI);
+            if (points[3] == 1) {
+                background.strokeText("Daugavas loki", 340, 255);
+            }
+            background.stroke();
+
+            background.fillRect(200, 155, 4, 4);
+            background.beginPath();
+            // background.strokeStyle = '#ff0000';
+            background.arc(202, 157, 12, 0, 2 * Math.PI);
+            background.strokeText("Rīga", 185, 140);
+            background.stroke();
+        }
+    </script>
     <script>
-    var workspace = Blockly.inject('blocklyDiv', {
-        toolbox: document.getElementById('toolbox'),
-        grid: {
-            spacing: 20,
-            length: 5,
-            colour: '#f2f2f2',
-            snap: true
-        },
-        trashcan: true
-    });
+        var workspace = Blockly.inject('blocklyDiv', {
+            toolbox: document.getElementById('toolbox'),
+            grid: {
+                spacing: 20,
+                length: 5,
+                colour: '#f2f2f2',
+                snap: true
+            },
+            trashcan: true
+        });
 
-    // var dom = Blockly.Xml.textToDom('load_custom');
-    // console.log(dom);
-    // Blockly.Xml.domToWorkspace(dom, workspace);
-
-
-    function toJavascript(event) {
-        var code = Blockly.JavaScript.workspaceToCode(workspace);
-        document.getElementById('content_javascript').innerHTML = code;
-    }
-    workspace.addChangeListener(toJavascript);
+        function toJavascript(event) {
+            var code = Blockly.JavaScript.workspaceToCode(workspace);
+            document.getElementById('content_javascript').innerHTML = code;
+        }
+        workspace.addChangeListener(toJavascript);
     </script>
     <script type="text/javascript">
-    var my_canvas = document.getElementById("canvas");
-    var ctx = my_canvas.getContext("2d");
-    var paper = new Image();
-    // paper.src = "../img_lessons/basanavicius/dokumentas.png";
-    var basanavicius = new Image();
-    basanavicius.src = "../img_lessons/basanavicius/basanavicius.png";
+        var globalID;
+
+        function runCode() {
+            cancelAnimationFrame(globalID);
+
+            Blockly.JavaScript.STATEMENT_PREFIX = 'highlightBlock(%1);\n';
+            Blockly.JavaScript.addReservedWords('highlightBlock');
+            var code = Blockly.JavaScript.workspaceToCode(workspace);
+            var myInterpreter = new Interpreter(code, initApi);
+            points = [];
+            background.clearRect(0, 0, canvas.width, canvas.height);
+            background.strokeStyle = "black";
+            background.drawImage(map, 0, 0);
+            drawGrid();
+            plain_x = 180;
+            plain_y = 75;
+            var x = 0;
+            var y = 0;
+            var move = 0;
+            finished = false;
+            document.getElementById("milda").style.visibility = 'visible';
+            document.getElementById("milda").style.transform = "translate(180px, 75px)";
 
 
-    var tekstas_correct = [];
-    tekstas_correct[0] = (1);
-    tekstas_correct[1] = (2);
-    tekstas_correct[2] = (3);
-    var tekstas_old = [];
-    var tekstas = [];
-    tekstas_old[0] = " 1._______________" //" Lietuvos Taryba, kaip vienintelė lietuvių tautos atstovybė,";
-    tekstas_old[1] = " remdamos pripažintąja tautų apsisprendimo teise ir lietuvių Vilniaus konferencijos nutarimu rugsėjo mėn. 18-23 d. 1917 metais, skelbia atstatanti nepriklausomą demokratiniais pamatais sutvarkytą Lietuvos valstybę su sostine Vilniuje";
-    tekstas_old[2] = " 2._______________" //" ir tą valstybę atskirianti nuo visų valstybinių ryšių, kurie yra buvę su kitomis tautomis.";
-    tekstas_old[3] = " Drauge Lietuvos Taryba pareiškia, kad Lietuvos valstybės pamatus ir jos santykius su kitomis valstybėmis privalo galutinai nustatyti kiek galima greičiau sušauktas steigiamasis seimas,";
-    tekstas_old[4] = " 3._______________" //" demokratiniu būdu visų jos gyventojų išrinktas.";
-    tekstas_old[5] = " Lietuvos Taryba pranešdama apie tai ....... vyriausybei, prašo pripažinti nepriklausomą Lietuvos valstybę.";
+            try {
 
-    var tekstas_short = [];
-    tekstas_short[0] = " Lietuvos Taryba, kaip vienintelė lietuvių tautos atstovybė, "
-    tekstas_short[1] = " ir tą valstybę atskirianti nuo visų valstybinių ryšių, kurie yra buvę su kitomis tautomis."
-    tekstas_short[2] = " demokratiniu būdu visų jos gyventojų išrinktas. "
-
-    document.getElementById('preview_text').innerHTML = tekstas_old.join("");
-    document.getElementById('list').innerHTML = "A. " + tekstas_short[2] + "<br>";
-    document.getElementById('list').innerHTML += "B. " + tekstas_short[0] + "<br>";
-    document.getElementById('list').innerHTML += "C. " + tekstas_short[1] + "<br>";
-
-
-    //}
-
-    function runCode() {
-        tekstas = [];
-        // Generate JavaScript code and run it.
-
-        window.LoopTrap = 1000;
-        Blockly.JavaScript.INFINITE_LOOP_TRAP =
-            'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
-        var code = 'tekstas = [];';
-        code += Blockly.JavaScript.workspaceToCode(workspace);
-        Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        //ctx.drawImage(paper, 0, 2);
-        tekstas_old[0] = " 1._______________" //" Lietuvos Taryba, kaip vienintelė lietuvių tautos atstovybė,";
-        tekstas_old[1] = " remdamos pripažintąja tautų apsisprendimo teise ir lietuvių Vilniaus konferencijos nutarimu rugsėjo mėn. 18-23 d. 1917 metais, skelbia atstatanti nepriklausomą demokratiniais pamatais sutvarkytą Lietuvos valstybę su sostine Vilniuje";
-        tekstas_old[2] = " 2._______________" //" ir tą valstybę atskirianti nuo visų valstybinių ryšių, kurie yra buvę su kitomis tautomis.";
-        tekstas_old[3] = " Drauge Lietuvos Taryba pareiškia, kad Lietuvos valstybės pamatus ir jos santykius su kitomis valstybėmis privalo galutinai nustatyti kiek galima greičiau sušauktas steigiamasis seimas,";
-        tekstas_old[4] = " 3._______________" //" demokratiniu būdu visų jos gyventojų išrinktas.";
-        tekstas_old[5] = " Lietuvos Taryba pranešdama apie tai ....... vyriausybei, prašo pripažinti nepriklausomą Lietuvos valstybę.";
-        try {
-            if (code.length > 13) {
-                eval(code);
-
-                for (var i = tekstas.length - 1; i >= 0; i--) {
-                    if (tekstas[i]) {
-                        if (i == 1) { tekstas_old.splice(2, 1, " " + (i + 1) + ". " + tekstas_short[tekstas[i] - 1]); } else if (i == 2) { tekstas_old.splice(4, 1, " " + (i + 1) + ". " + tekstas_short[tekstas[i] - 1]); } else if (i == 0) { tekstas_old.splice(0, 1, " " + (i + 1) + ". " + tekstas_short[tekstas[i] - 1]); }
-
+                if (code.length > 0) {
+                    //eval(code);
+                    function nextStep() {
+                        if (myInterpreter.step()) {
+                            window.setTimeout(nextStep, 0);
+                        }
                     }
+                    nextStep();
+                } else {
+                    alert('Izmanto programmēšanas blokus');
                 }
 
-                document.getElementById('preview_text').innerHTML = tekstas_old.join("");
-
-                document.getElementById('list').innerHTML = "A. " + tekstas_short[2] + "<br>";
-                document.getElementById('list').innerHTML += "B. " + tekstas_short[0] + "<br>";
-                document.getElementById('list').innerHTML += "C. " + tekstas_short[1] + "<br>";
-                if (JSON.stringify(tekstas_correct) == JSON.stringify(tekstas)) {
-                    ctx.drawImage(basanavicius, 138, 0);
-                    setTimeout(function() { $('#nextModal').modal('show'); }, 2000);
-
-                } else { alert("Bandyk dar kartą"); }
-
-            } else {
-                alert('Pridėk kodo blokelį.');
+            } catch (e) {
+                alert('Kļūda! Lūdzu, pārbaudi blokus');
             }
-
-        } catch (e) {
-            alert('Klaida! Patikrink blokelius');
         }
-    }
+
+
+        function initApi(interpreter, scope) {
+
+            // Add an API function for the alert() block.
+            var wrapper = function(text) {
+                text = text ? text.toString() : '';
+                return interpreter.createPrimitive(alert(text));
+            };
+            interpreter.setProperty(scope, 'alert',
+                interpreter.createNativeFunction(wrapper));
+
+            // Add an API function for the prompt() block.
+            wrapper = function(text) {
+                text = text ? text.toString() : '';
+                return interpreter.createPrimitive(prompt(text));
+            };
+            interpreter.setProperty(scope, 'prompt',
+                interpreter.createNativeFunction(wrapper));
+            // Add an API function for highlighting blocks.
+            var wrapper = function(id) {
+                id = id ? id.toString() : '';
+                return interpreter.createPrimitive(Blockly.mainWorkspace.highlightBlock(id));
+            };
+            interpreter.setProperty(scope, 'highlightBlock',
+                interpreter.createNativeFunction(wrapper));
+
+            /***********************************************************************/
+
+            Blockly.JavaScript.addReservedWords('updateMilda');
+
+            var wrapper = interpreter.createAsyncFunction(
+                function updateMilda(x, y, callback) {
+                    changePoints(x, y);
+                    callback();
+                }
+            );
+            interpreter.setProperty(scope, 'updateMilda', wrapper);
+            /***********************************************************************/
+
+            /*************************************************************************/
+            Blockly.JavaScript.addReservedWords('waitForSeconds');
+
+            var wrapper = interpreter.createAsyncFunction(
+                function(timeInSeconds, callback) {
+                    // Delay the call to the callback.
+                    setTimeout(callback, timeInSeconds * 1000);
+                });
+            interpreter.setProperty(scope, 'waitForSeconds', wrapper);
+
+        }
     </script>
 </body>
 

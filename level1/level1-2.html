@@ -1,343 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
-</head>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link href="../css/bootstrap.min.css"
+              rel="stylesheet">
+        <link href="../css/style.css"
+              rel="stylesheet">
+    </head>
 
-<body>
+    <body>
         <div class='customAlert'>
-        <p class='message'></p>
-        <input type='button' class='confirmButton' value='Gerai'>
-    </div>
-    <div class="container-fluid header-top">
-        <a href="../index.html"><img class="header_logo img-fluid" src="../img_lessons/100_small1.png"></a>
-        <div class="progress-container">
-            <ul style="text-align: center;">
-                <li>
-                    <a href="level1-1.html">1</a>
-                </li>
-                <li>
-                    <a class="active" href="level1-2.html">2</a>
-                </li>
-                <li>
-                    <a href="level1-3.html">3</a>
-                </li>
-                <li>
-                    <a href="level1-4.html">4</a>
-                </li>
-                <li>
-                    <a href="level1-5.html">5</a>
-                </li>
-                <li>
-                    <a href="level1-6.html">6</a>
-                </li>
-                <li>
-                    <a href="level1-7.html">7</a>
-                </li>
-                <li>
-                    <a href="level1-8.html">8</a>
-                </li>
-                <li>
-                    <a href="level1-9.html">9</a>
-                </li>
-                <li>
-                    <a href="level1-10.html">10</a>
-                </li>
-            </ul>
+            <p class='message'></p>
+            <input type='button'
+                   class='confirmButton'
+                   value='Labi'>
         </div>
-    </div>
-    <div class="container-fluid working-space">
-        <div class="row" style="padding: 10px;">
-            <div class="col-md-5">
-                <h4>2. LITUANICA: du draugai</h4></div>
-            <div class=" col-md-7" id="task"> Atkurk istorinį Dariaus ir Girėno skrydį per Atlantą ir padėk pasiekti jo tikslą. Lakūnų kelionė, prasidėjusi Niujorke, tęsėsi virš Niufaundlando, Škotijos ir, deja, baigėsi dabartinėje Lenkijos teritorijoje, nepasiekusi Kauno. Programuok jungdamas blokelius ir nurodyk teisingą kryptį. Jei pasiekei lemtingą tašką Lenkijoje, padėk lakūnams pasiekti Kauną.
-                <a href="javascript:void(0)" onclick="changeVideo('f6R89D9RLn4')">Užduoties video</a> </div>
+        <div class="container-fluid header-top">
+            <a href="../index.html">
+            <img class="header_logo img-fluid" src="../100/100_small1.png">
+        </a>
+            <div class="progress-container">
+                <ul style="text-align: center;">
+                    <li>
+                        <a href="level1-1.html">1</a>
+                    </li>
+                    <li>
+                        <a class="active" href="level1-2.html">2</a>
+                    </li>
+                    <li>
+                        <a href="level1-3.html">3</a>
+                    </li>
+                    <li>
+                        <a href="level1-4.html">4</a>
+                    </li>
+                    <li>
+                        <a href="level1-5.html">5</a>
+                    </li>
+                    <li>
+                        <a href="level1-6.html">6</a>
+                    </li>
+                    <li>
+                        <a href="level1-7.html">7</a>
+                    </li>
+                    <li>
+                        <a href="level1-8.html">8</a>
+                    </li>
+                    <li>
+                        <a href="level1-9.html">9</a>
+                    </li>
+                    <li>
+                        <a href="level1-10.html">10</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="row" style="padding: 10px">
-            <div class="col  ">
-                <div id="preview">
-                    <canvas id="canvas" width="490" height="330" style="z-index: 0">
+        <div class="container-fluid working-space">
+            <div class="row"
+                 style="padding: 10px;">
+                <div class="col-md-5">
+                    <h4>2. Krišjānis Barons, vairāk kā Dainas</h4>
+                </div>
+                <div class=" col-md-7"
+                     id="task">
+                     Saliec visus sava vārda burtus pēc kārtas un izveido savu grafisko zīmi. Eksperimentē ar burtu krāsu, līnijas biezumu un vēsturiskajiem latviešu valodas burtiem CH, Ō un Ŗ. Saglabā attēlu savā datorā, nospiežot pogu "Lejuplādēt".
+                </div>
+            </div>
+            <div class="row"
+                 style="padding: 10px">
+                <div class="col  ">
+                    <div id="preview">
+                        <canvas id="canvas"
+                                width="490"
+                                height="330">
                         This text is displayed if your browser does not support HTML5 Canvas.
                     </canvas>
-                    <canvas id="canvas3" width="490" height="330">
+                        <canvas id="canvas2"
+                                width="490"
+                                height="330">
                         This text is displayed if your browser does not support HTML5 Canvas.
                     </canvas>
-                    <div id="lituanica_plane"></div>
-                </div>
-                <div class="button-panel">
-                    <button class="button-run btn btn-lg btn-secondary" onclick="runCode()">Paleisti </button>
-                    <div class="hint-panel">
-                        <ul> Užuomina:
-                            <li>
-                                <a tabindex="0" href="javascript:void(0)" data-toggle="popover" data-placement="top" data-trigger="focus" title="" data-text="Įsivaizduok, kad esi lėktuvo pilotas - taip bus lengviau rasti kairę ir dešinę.">1</a>
-                                <!-- https://drive.google.com/file/d/1AfH3D7FR0ep2eYjYqQQhWqAPC3ep0hF_/view -->
-                            </li>
-                            <li>
-                                <a tabindex="0"  href="javascript:void(0)" data-toggle="popover" data-placement="top" data-trigger="focus" title="" data-text="Ar tikrai aplankei visus taškus? Atkūręs maršrutą, nukeliauk ir iki suplanuoto tikslo - Kauno." data-full="../hints/L1T2_H2.png">2</a>
-                                <!-- https://drive.google.com/file/d/1udySRTWwxen0BUmGSVjwEqwb5q04YJAu/view -->
-                            </li>
-                        </ul>
+                        <canvas id="canvas3"
+                                width="490"
+                                height="330">
+                        This text is displayed if your browser does not support HTML5 Canvas.
+                    </canvas>
                     </div>
-                </div>
-            </div>
-            <div class="col" style="padding: 0 ;">
-                <div id="blocklyDiv">
-                </div>
-                <xml id="toolbox" style="display: none">
-                    <block type="fly_left">
-                    </block>
-                    <block type="fly_right">
-                    </block>
-                    <block type="fly_straight">
-                    </block>
-                    <block type="blocks">
-                    </block>
-                </xml>
-            </div>
-            <div class="col-md-3 col-lg-2" style="height: 70vh;">
-                <h5>Javascript kodas: </h5>
-                <pre id="content_javascript">
-                </pre>
-            </div>
-        </div>
-          <div class="row">
-            <div class="logo-row"><img src="../100/logo13.png"><img src="../100/logo12.png"><img src="../100/logo14.png"></div>
-        </div>
-        <div class="video-modal">
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <iframe id="iframeYoutube" width="100%" height="315" src="https://www.youtube.com/embed/f6R89D9RLn4  " frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Uždaryti</button>
+                    <div class="button-panel">
+                        <button class="button-run btn btn-lg btn-secondary"
+                                onclick="runCode()">Starts </button>
+                        <div class="hint-panel">
+                            <ul> Norāde:
+                                <li>
+                                    <a tabindex="0"
+                                       href="javascript:void(0)"
+                                       data-toggle="popover"
+                                       data-placement="top"
+                                       data-trigger="focus"
+                                       title=""
+                                       data-text="Vai savienoji visus blokus?"
+                                       data-full="../hints/LV1_T2_H1.png">1</a>
+                                </li>
+                                <li>
+                                    <a tabindex="0"
+                                       href="javascript:void(0)"
+                                       data-toggle="popover"
+                                       data-placement="top"
+                                       data-trigger="focus"
+                                       title=""
+                                       data-text='Līnijas biezums var būt precīzs vai arī tas var būt neparedzams, ja izvēlies bloku, kas ir apzīmēts kā "nejaušs". Šos blokus var lietot pirms katra burta. Labots: '
+                                       data-full="../hints/LV1_T2_H2.png">2</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
+                    <div>
+                        <button id="download"
+                                class="btn download-btn">Lejupielādēt</button>
+                    </div>
+                </div>
+                <div class="col"
+                     style="padding: 0 ;">
+                    <div id="blocklyDiv">
+                    </div>
+                    <xml id="toolbox"
+                         style="display: none">
+                        <category name="Alfabēts"
+                                  colour="260">
+                            <block type="raide_A">
+                            </block>
+                            <block type="raide_Ā">
+                            </block>
+                            <block type="raide_B">
+                            </block>
+                            <block type="raide_C">
+                            </block>
+                            <block type="raide_Č">
+                            </block>
+                            <block type="raide_D">
+                            </block>
+                            <block type="raide_E">
+                            </block>
+                            <block type="raide_Ē">
+                            </block>
+                            <block type="raide_F">
+                            </block>
+                            <block type="raide_G">
+                            </block>
+                            <block type="raide_Ģ">
+                            </block>
+                            <block type="raide_H">
+                            </block>
+                            <block type="raide_I">
+                            </block>
+                            <block type="raide_Ī">
+                            </block>
+                            <block type="raide_J">
+                            </block>
+                            <block type="raide_K">
+                            </block>
+                            <block type="raide_Ķ">
+                            </block>
+                            <block type="raide_L">
+                            </block>
+                            <block type="raide_Ļ">
+                            </block>
+                            <block type="raide_M">
+                            </block>
+                            <block type="raide_N">
+                            </block>
+                            <block type="raide_Ņ">
+                            </block>
+                            <block type="raide_O">
+                            </block>
+                            <block type="raide_P">
+                            </block>
+                            <block type="raide_R">
+                            </block>
+                            <block type="raide_S">
+                            </block>
+                            <block type="raide_Š">
+                            </block>
+                            <block type="raide_T">
+                            </block>
+                            <block type="raide_U">
+                            </block>
+                            <block type="raide_Ū">
+                            </block>
+                            <block type="raide_V">
+                            </block>
+                            <block type="raide_Z">
+                            </block>
+                            <block type="raide_Ž">
+                            </block>
+                            <block type="raide_CH">
+                            </block>
+                            <block type="raide_Ŗ">
+                            </block>
+                            <block type="raide_Ō">
+                            </block>
+                        </category>
+                        <category name="Burtu stils"
+                                  colour="20">
+                            <block type="spalva">
+                            </block>
+                            <block type="storis">
+                            </block>
+                            <block type="colour_random"></block>
+                            <block type="math_random_int">
+                                <value name="FROM">
+                                    <shadow type="math_number">
+                                        <field name="NUM">1</field>
+                                    </shadow>
+                                </value>
+                                <value name="TO">
+                                    <shadow type="math_number">
+                                        <field name="NUM">100</field>
+                                    </shadow>
+                                </value>
+                            </block>
+                            <block type="math_number"
+                                   gap="32"></block>
+                            <block type="colour_picker"></block>
+                            <block type="kvadratas">
+                            </block>
+                        </category>
+                    </xml>
+                </div>
+                <div class="col-md-3 col-lg-2"
+                     style="height: 70vh;">
+                    <h5>Javascript kods: </h5>
+                    <pre id="content_javascript">
+                    </pre>
                 </div>
             </div>
-        </div>
-        <div class="next-modal">
-            <div class="modal fade" id="nextModal" tabindex="-1" role="dialog" aria-labelledby="nextModalLabel">
-                <div class="modal-dialog" role="document">
-                   <div class="modal-content">
-                        <div class="modal-body">
-                            <div>
-                                <h3>Atskridai!</h3>
+            <div class="next-modal">
+                <div class="modal fade"
+                     id="nextModal"
+                     tabindex="-1"
+                     role="dialog"
+                     aria-labelledby="nextModalLabel">
+                    <div class="modal-dialog"
+                         role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div>
+                                    <h3>Lieliski!</h3>
+                                </div>
+                                <div class="modal-buttons">
+                                    <a href="#"
+                                       class="btn btn-secondary"
+                                       data-dismiss="modal">Doties atpakaļ uz uzdevumu</a>
+                                    <a href="level1-3.html"
+                                       class="btn btn-secondary">Nākamais uzdevums</a>
+                                </div>
                             </div>
-                            <div class="modal-buttons">
-                                <a href="#" class="btn btn-secondary" data-dismiss="modal">Grįžti į užduotį</a>
-                                <a href="level1-3.html" class="btn btn-secondary">Kita užduotis</a>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <img style="visibility: hidden;">
         </div>
-        <img style="visibility: hidden;">
-    </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/acorn_interpreter.js"></script>
-    <script src="../js/blockly_compressed.js"></script>
-    <script src="../js/javascript_compressed.js"></script>
-    <script src="../js/blocks_compressed.js"></script>
-    <script src="../msg/js/lt.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/lituanica.js"></script>
-    <script type="text/javascript">
-    var my_canvas = document.getElementById("canvas");
-    var background = my_canvas.getContext("2d");
-    var map = new Image();
-    map.src = "../img_lessons/lituanica/fonas.png";
-    var plane = new Image();
-    plane.src = "../img_lessons/lituanica/lituanica_didelis.png";
-    var plain_x = 0;
-    var plain_y = 170;
-    var finished = false;
-    var points = [];
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+                integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+                crossorigin="anonymous"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/blockly_compressed.js"></script>
+        <script src="../js/javascript_compressed.js"></script>
+        <script src="../js/blocks_compressed.js"></script>
+        <script src="../msg/js/lv.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/letters.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+        <script type="text/javascript">
+            var w = window;
+            requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
+            var my_canvas = document.getElementById("canvas");
+            var ctx = my_canvas.getContext("2d");
+            var c_canvas = document.getElementById("canvas2");
+            var c_ctx = c_canvas.getContext("2d");
+            var a_canvas = document.getElementById("canvas3");
+            var m_ctx = a_canvas.getContext("2d");
 
-    map.onload = function() {
-        //draw(map, 0, 0, 500,300);
+            var img_maciunas = new Image();
+            img_maciunas.setAttribute('crossOrigin', 'anonymous');
+            img_maciunas.src = '../img_lessons/barons/BARONS_1.png';
 
-        background.drawImage(map, 0, 0);
-        drawGrid();
+            ///draw image
 
-    }
-
-    function drawGrid() {
-        background.strokeStyle = 'grey';
-        for (i = 0; i < 490; i += 40) {
-            background.beginPath();
-            background.moveTo(i, 0);
-            background.lineTo(i, 330);
-            background.stroke();
-        }
-        for (i = 10; i < 330; i += 40) {
-            background.beginPath();
-            background.moveTo(0, i);
-            background.lineTo(490, i);
-            background.stroke();
-        }
-        background.strokeStyle = 'black';
-         background.font = "12px Verdana";
-        //newyork
-        background.fillRect(45, 190, 4, 4);
-        background.beginPath();
-        background.arc(47, 192, 8, 0, 2 * Math.PI);
-        background.strokeText("Niujorkas", 40, 210);
-        background.stroke();
-        //newfoundland
-        background.fillRect(130, 140, 4, 4);
-        background.beginPath();
-        background.arc(132, 142, 8, 0, 2 * Math.PI);
-
-        background.stroke();
-        //Škotija
-        background.fillRect(330, 105, 4, 4);
-        background.beginPath();
-        background.arc(332, 107, 8, 0, 2 * Math.PI);
-
-        background.stroke();
-        //Kaunas
-        background.fillRect(449, 122, 4, 4);
-        background.beginPath();
-        background.arc(451, 124, 8, 0, 2 * Math.PI);
-        background.stroke();
-        //Lenkija, ex Vokietija, 
-        background.fillRect(410, 140, 4, 4);
-        background.beginPath();
-        background.strokeStyle = '#ff0000';
-        background.arc(412, 142, 8, 0, 2 * Math.PI);
-        background.stroke();
-
-
-    }
-    </script>
-    <script>
-    var workspace = Blockly.inject('blocklyDiv', {
-        toolbox: document.getElementById('toolbox'),
-        grid: {
-            spacing: 20,
-            length: 5,
-            colour: '#f2f2f2',
-            snap: true
-        },
-        trashcan: true
-    });
-
-    function toJavascript(event) {
-        var code = Blockly.JavaScript.workspaceToCode(workspace);
-        document.getElementById('content_javascript').innerHTML = code;
-    }
-    workspace.addChangeListener(toJavascript);
-    </script>
-    <script type="text/javascript">
-    var globalID;
-
-    function runCode() {
-        cancelAnimationFrame(globalID);
-
-        Blockly.JavaScript.STATEMENT_PREFIX = 'highlightBlock(%1);\n';
-        Blockly.JavaScript.addReservedWords('highlightBlock');
-        var code = Blockly.JavaScript.workspaceToCode(workspace);
-        var myInterpreter = new Interpreter(code, initApi);
-
-        background.clearRect(0, 0, canvas.width, canvas.height);
-        background.strokeStyle = "black";
-        background.drawImage(map, 0, 0);
-        drawGrid();
-        plain_x = 0;
-        plain_y = 170;
-        var x = 0;
-        var y = 0;
-        var move = 0;
-        finished = false;
-        points = [];
-        document.getElementById("lituanica_plane").style.visibility = 'visible';
-        document.getElementById("lituanica_plane").style.transform = "translate(0px, 170px)";
-
-
-        try {
-
-            if (code.length > 0) {
-                //eval(code);
-                function nextStep() {
-                    if (myInterpreter.step()) {
-                        window.setTimeout(nextStep, 0);
-                    }
-                }
-                nextStep();
-                // myInterpreter.run();
-            } else {
-                alert('Pridėk kodo blokelį.');
-            }
-
-        } catch (e) {
-            alert('Klaida! Patikrink blokelius');
-        }
-    }
-
-
-    function initApi(interpreter, scope) {
-
-        // Add an API function for the alert() block.
-        var wrapper = function(text) {
-            text = text ? text.toString() : '';
-            return interpreter.createPrimitive(alert(text));
-        };
-        interpreter.setProperty(scope, 'alert',
-            interpreter.createNativeFunction(wrapper));
-
-        // Add an API function for the prompt() block.
-        wrapper = function(text) {
-            text = text ? text.toString() : '';
-            return interpreter.createPrimitive(prompt(text));
-        };
-        interpreter.setProperty(scope, 'prompt',
-            interpreter.createNativeFunction(wrapper));
-        // Add an API function for highlighting blocks.
-        var wrapper = function(id) {
-            id = id ? id.toString() : '';
-            return interpreter.createPrimitive(Blockly.mainWorkspace.highlightBlock(id));
-        };
-        interpreter.setProperty(scope, 'highlightBlock',
-            interpreter.createNativeFunction(wrapper));
-
-        /***********************************************************************/
-
-        Blockly.JavaScript.addReservedWords('updatePlane');
-
-        var wrapper = interpreter.createAsyncFunction(
-            function updatePlane(x, y, callback) {
-                changePoints(x, y);
-                callback();
-            }
-        );
-        interpreter.setProperty(scope, 'updatePlane', wrapper);
-        /***********************************************************************/
-
-        /*************************************************************************/
-        Blockly.JavaScript.addReservedWords('waitForSeconds');
-
-        var wrapper = interpreter.createAsyncFunction(
-            function(timeInSeconds, callback) {
-                // Delay the call to the callback.
-                setTimeout(callback, timeInSeconds * 1000);
+            img_maciunas.addEventListener("load", function() {
+                m_ctx.fillStyle = "#ced9dd";
+                m_ctx.fillRect(0, 0, canvas.width, canvas.height);
+                m_ctx.drawImage(img_maciunas, 140, 20, 200, 300);
             });
-        interpreter.setProperty(scope, 'waitForSeconds', wrapper);
+        </script>
+        <script>
+            var workspace = Blockly.inject('blocklyDiv', {
+                toolbox: document.getElementById('toolbox'),
+                grid: {
+                    spacing: 20,
+                    length: 5,
+                    colour: '#f2f2f2',
+                    snap: true
+                },
+                trashcan: true
+            });
 
-    }
-    </script>
-</body>
+            function toJavascript(event) {
+                var code = Blockly.JavaScript.workspaceToCode(workspace);
+                document.getElementById('content_javascript').innerHTML = code;
+            }
+            workspace.addChangeListener(toJavascript);
+        </script>
+        <script type="text/javascript">
+            var cx = 199;
+            var cy = 85;
+            var radius = 71;
+            var degreeAngle = 0;
+            var degreeAngleCircle = 0;
+            var interval = 0;
+
+            function runCode() {
+                // Generate JavaScript code and run it.
+                window.LoopTrap = 1000;
+                Blockly.JavaScript.INFINITE_LOOP_TRAP =
+                    'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+                var code = Blockly.JavaScript.workspaceToCode(workspace);
+                Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+                m_ctx.clearRect(0, 0, canvas.width, canvas.height);
+                c_ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                cx = 199;
+                cy = 85;
+                radius = 71;
+                degreeAngle = 0;
+                degreeAngleCircle = 0;
+                img_maciunas_drawing = new Image();
+                img_maciunas_drawing.setAttribute('crossOrigin', 'anonymous');
+                img_maciunas_drawing.src = '../img_lessons/barons/BARONS_2.png';
+                img_maciunas_drawing.addEventListener("load", function() {
+                    m_ctx.drawImage(img_maciunas_drawing, 200, 70, 149, 200);
+                });
+
+
+                try {
+
+                    if (code.length > 0) {
+                        eval(code);
+                        animate();
+                    } else {
+                        alert('Izmanto programmēšanas blokus');
+                    }
+
+                } catch (e) {
+                    alert('Kļūda! Lūdzu, pārbaudi blokus');
+                }
+
+                function animate() {
+
+                    // request that this animate() function be called again
+                    // this creates an animation loop
+                    if (degreeAngle >= 360) {
+                        cancelAnimationFrame(globalID);
+                        //cancelAnimationFrame(globalID2);
+                        setTimeout(function() {
+                            $('#nextModal').modal('show');
+                        }, 2000);
+                    } else {
+                        globalID = requestAnimationFrame(animate);
+                    }
+
+
+                    // clear the canvas
+
+                    // calculate the new position of the image
+                    // this example just rotates it around a centerpoint   
+                    degreeAngle += 1;
+                    var radianAngle = degreeAngle * Math.PI / 180;
+                    var x = cx + radius * Math.cos(radianAngle);
+                    var y = cy + radius * Math.sin(radianAngle);
+
+                    // clear the canvas 
+                    // and draw the image at its new position
+                    c_ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    m_ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    m_ctx.drawImage(img_maciunas_drawing, x, y, 149, 200);
+                    degreeAngleCircle += 0.0056;
+
+                    c_ctx.beginPath();
+                    c_ctx.lineJoin = 'round';
+                    c_ctx.lineCap = 'round';
+                    c_ctx.lineWidth = 3;
+                    c_ctx.strokeStyle = "black";
+                    c_ctx.arc(200, 150, 70, 0, degreeAngleCircle * Math.PI);
+                    c_ctx.stroke();
+                }
+            }
+        </script>
+        <script type="text/javascript">
+            download.addEventListener("click", function() {
+                // only jpeg is supported by jsPDF
+                var imgData = canvas.toDataURL();
+                var imgData2 = canvas2.toDataURL();
+                //var imgData3 = canvas3.toDataURL();
+                var pdf = new jsPDF({
+                    orientation: 'landscape'
+                });
+
+
+                pdf.addImage(imgData, 'JPEG', 20, 20);
+                pdf.addImage(imgData2, 'JPEG', 20, 20);
+                // pdf.addImage(imgData3, 'JPEG', 20, 20);
+                pdf.save("name_symbol.pdf");
+            }, false);
+        </script>
+    </body>
 
 </html>

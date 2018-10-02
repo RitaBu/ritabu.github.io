@@ -29,17 +29,17 @@
 
     download.addEventListener("click", function() {
         // only jpeg is supported by jsPDF
-         var imgData = canvas.toDataURL();
+        var imgData = canvas.toDataURL();
          var imgData2 = canvas2.toDataURL();
         var pdf = new jsPDF({
             orientation: 'landscape'
         })
 
 
-         pdf.addImage(imgData, 'JPEG', 83, 60);
-         pdf.addImage(imgData2, 'JPEG', 83, 60);
+        pdf.addImage(imgData, 'JPEG', 83, 60);
+        pdf.addImage(imgData2, 'JPEG', 83, 60);
 
-        pdf.save("plakatas.pdf");
+        pdf.save("plakāts.pdf");
     }, false);
 
     function runCode() {
@@ -55,7 +55,7 @@
             if (code.length > 0) {
                 eval(code);
             } else {
-                alert('Pridėk kodo blokelį.');
+                alert('Izmanto programmēšanas blokus');
             }
 
         } catch (e) {
@@ -67,28 +67,37 @@
     Blockly.Blocks['select_image'] = {
         init: function() {
             this.appendDummyInput()
-                .appendField("Paveiksliukas")
+                .appendField("Attēls")
                 .appendField(new Blockly.FieldDropdown([
-                    ["Adamkus", "adamkus"],
-                    ["Basanavičius", "basanavicius"],
-                    ["Estija", "estija"],
+                    ["V. Vīķe-Freiberga", "vike"],
+                    ["Barons 1", "Barons-1"],
+                    ["Barons 2", "Barons-2"],
+                    ["Igaunija", "estija"],
                     ["Latvija", "latvija"],
                     ["Lietuva", "lietuva"],
-                    ["Euras", "euras"],
-                    ["Kasa", "kasa"],
-                    ["Litas", "litas"],
-                    ["Lituanica", "lituanica"],
-                    ["Šakotis", "sakotis"],
-                    ["Mačiūnas 1", "maciunas1"],
-                    ["Mačiūnas 2", "maciunas2"],
-                    ["Mažylis", "mazylis"],
-                    ["Meilutytė", "meilutyte"],
-                    ["Mergina", "mergina"],
-                    ["Palmės", "palmes"],
-                    ["Šokėjų pora 1", "sokejai1"],
-                    ["Šokėjų pora 2", "sokejai2"],
-                    ["Šokėjų pora 3", "sokejai3"],
-                    ["Šokėjų pora 4", "sokejai4"]
+                    ["Medicine", "medicina"],
+                    ["Fotokamera", "foto-kamera"],
+                    ["Eiro", "euras"],
+                    ["Kases aparāts", "kasa"],
+                    ["Lati", "latas"],
+                    ["Tjūringa balva", "award"],
+                    ['Torte "Cielaviņa"', "tortas"],
+                    ["ES karogs", "veliava-1"],
+                    ["NATO karogs", "veliava-2"],
+                    ["Latvian flag", "veliava-3"],
+                    ["Reģioni", "regionai"],
+                    ["Milda", "Milda"],
+                    ["Tamborētas mežģīnes", "mezginys"],
+                    ["Koki", "medziai"],
+                    ["Porziņģis 1", "Porzingis-1"],
+                    ["Porziņģis 2", "Porzingis-2"],
+                    ["Mūku templis", "sventykla"],
+                    ["Dejotāju pāris 1", "sokejai-1"],
+                    ["Dejotāju pāris 2", "sokejai-2"],
+                    ["Dejotāju pāris 3", "sokejai-3"],
+                    ["Dejotāju pāris 4", "sokejai-4"],
+                    ["Dejotāju pāris 5", "sokejai-5"],
+                    ["Dejotāju pāris 6", "sokejai-6"]
                 ]), "image")
                 .appendField("X: ")
                 .appendField(new Blockly.FieldNumber(0, 0, 480), "x")
@@ -114,8 +123,8 @@
     Blockly.Blocks['block_name'] = {
         init: function() {
             this.appendDummyInput()
-                .appendField("Fonas su tavo vardu: ")
-                .appendField(new Blockly.FieldTextInput("įrašyk vardą"), "kids_name");
+                .appendField("Fons ar Tavu vārdu: ")
+                .appendField(new Blockly.FieldTextInput("MANS VĀRDS"), "kids_name");
             this.setNextStatement(true, null);
             this.setColour(230);
             this.setTooltip("");
@@ -131,14 +140,14 @@
 
     function draw(name, x, y) {
         var img_name = new Image();
-        img_name.setAttribute('crossOrigin', 'anonymous');
+        // img_name.setAttribute('crossOrigin', 'anonymous');
         img_name.src = '../img_lessons/plakatas/' + name + '.png';
         img_name.onload = function() { icons.drawImage(img_name, x, y); }
     }
 
     function write(name) {
         var img_name = new Image();
-        img_name.setAttribute('crossOrigin', 'anonymous');
+        // img_name.setAttribute('crossOrigin', 'anonymous');
         img_name.src = '../img_lessons/plakatas/background.png';
         img_name.onload = function() { 
         ctx.drawImage(img_name, 0, 0);

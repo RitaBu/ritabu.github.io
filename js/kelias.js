@@ -8,20 +8,21 @@ var done = [];
 Blockly.Blocks['keisti'] = {
     init: function() {
         this.appendDummyInput()
-            .appendField("Jei ")
+            .appendField("Ja ")
             .appendField(new Blockly.FieldDropdown([
-                ["pasirinkti", "Option"],
-                ["berniukas", "berniukas"],
-                ["vyriškis", "vyriskis"],
-                ["mergina", "mergina"]
+                ["izvēlies", "Option"],
+                ["zēns", "berniukas"],
+                ["vīrietis", "vyriskis"],
+                ["meitene", "mergina"]
             ]), "people")
-            .appendField("su")
+            .appendField("ar")
             .appendField(new Blockly.FieldDropdown([
-                ["pasirinkti", "Option"],
-                ["vėliava", "veliava"],
-                ["žydra kepure", "kepure"],
-                ["akiniais", "akiniai"]
-            ]), "color");
+                ["izvēlies", "Option"],
+                ["karogs", "veliava"],
+                ["zila cepure", "kepure"],
+                ["brilles", "akiniai"]
+            ]), "color")
+            .appendField("tad");
         this.appendStatementInput("IF")
             .setCheck(null);
         this.setPreviousStatement(true, null);
@@ -40,30 +41,13 @@ Blockly.JavaScript['keisti'] = function(block) {
     return code;
 };
 
-Blockly.Blocks['add_person'] = {
-    init: function() {
-        this.appendDummyInput()
-            .appendField("Pridėti vieną žmogų");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour(230);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.JavaScript['add_person'] = function(block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = ' animatePerson(x);\n ';
-    return code;
-};
-
 Blockly.Blocks['add_person_side'] = {
     init: function() {
         this.appendDummyInput()
-            .appendField("Pridėti žmogų iš")
+            .appendField("Pievieno personu no")
             .appendField(new Blockly.FieldDropdown([
-                ["kairės", "right"],
-                ["dešinės", "left"]
+                ["pa kreisi", "right"],
+                ["pa labi", "left"]
             ]), "side");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -174,7 +158,7 @@ function animatePerson(x, side) {
     if (x == "kepure") {
         // $('.person').show().css({ "animation-name": "animatedPerson" }); 
         if (side == "left") {
-            alert('Netinkama berniuko pusė');
+            alert('Nepareizā zēna puse');
             $('.person_lost').show();
             // var left = $('.person').offset().left;
             // $('.person').show().css({ left: left }).animate({ left: "189px" }, "slow");
@@ -187,7 +171,7 @@ function animatePerson(x, side) {
     } else if (x == "veliava") {
         // $('.person2').show().css({ "animation-name": "animatedPerson2" }); 
         if (side == "left") {
-             alert('Netinkama merginos pusė');
+             alert('Nepareizā meitenes puse');
               $('.person_lost').show();
             // var left = $('.person2').offset().left;
             // $('.person2').show().css({ left: left }).animate({ left: "107px" }, "slow");
@@ -204,7 +188,7 @@ function animatePerson(x, side) {
             var left = $('.person3').offset().left;
             $('.person3').show().css({ left: left }).animate({ left: "258px" }, "slow");
         } else {
-             alert('Netinkama vyro pusė');
+             alert('Nepareizā vīrieša puse');
               $('.person_lost').show();
             // var right = $('.person3').offset().right;
             // $('.person3').show().css({ right: right }).animate({ right: "190px" }, "slow");
@@ -221,6 +205,6 @@ function animatePerson2(x, i) {
 }
 
 function lost() {
-    alert("Nėra tokio žmogaus");
+    alert("Nav tādas personas");
      $('.person_lost').show();
 }
