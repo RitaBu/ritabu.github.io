@@ -103,13 +103,12 @@ body {
 
 .line {
     border-top: 2px solid;
-    padding: 40px 0px 0px 0px;
+    padding: 20px 0px 0px 0px;
     margin-right: 19px;
 }
 
 .in-table .item {
     padding: 0px 16px 16px 0px;
-    justify-content: space-around;
 }
 
 
