@@ -151,18 +151,18 @@ function changePoints(x, y) {
     document.getElementById("milda").style.animationDuration = "0.5s"
     checkPoint(plain_x, plain_y);
     if (x > 0) {
-        plain_x += 1;
-        x -= 1;
+        plain_x += 2;
+        x -= 2;
     } else if (x < 0) {
-        plain_x -= 1;
-        x += 1;
+        plain_x -= 2;
+        x += 2;
     }
     if (y > 0) {
-        plain_y += 1;
-        y -= 1;
+        plain_y += 2;
+        y -= 2;
     } else if (y < 0) {
-        plain_y -= 1;
-        y += 1;
+        plain_y -= 2;
+        y += 2;
     }
 }
 
