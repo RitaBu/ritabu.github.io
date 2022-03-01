@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         '1FAIpQLSf3lZQoBjpJaOnzWid7LQ5Ntc98vMFBJNXl5hryiiagpgdoFg', //1
     ];
 
-    let randomIndex = Math.floor(Math.random() * formIds.length);
+    let randomIndex = getRandomInt(0, 3);
 
     let introPanel = document.getElementById('intro-panel');
 
@@ -72,3 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     };
 });
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
