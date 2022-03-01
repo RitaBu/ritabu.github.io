@@ -9,16 +9,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let randomIndex = Math.floor(Math.random() * formIds.length);
 
-    const timer = document.getElementById('timer');
-    const infoPanel = document.getElementById('info-panel');
-    let timerInterval;
+    let introPanel = document.getElementById('intro-panel');
 
-    if (randomIndex > 0) {
-        infoPanel.style.display = 'block';
+    let timer1 = document.getElementById('timer-1');
+    let infoPanel1 = document.getElementById('info-panel-1');
+
+    let timer2 = document.getElementById('timer-2');
+    let infoPanel2 = document.getElementById('info-panel-2');
+
+    let timerInterval;
+    let timer = randomIndex == 1 ? timer2 : timer1;
+    let infoPanel = randomIndex == 1 ? infoPanel2 : infoPanel1;
+
+    if (randomIndex == 1) {
+        infoPanel2.style.display = 'flex';
+    } else {
+        infoPanel1.style.display = 'flex';
     }
 
     button.onclick = function() {
         infoPanel.style.display = 'none';
+        introPanel.style.display = 'none';
         button.style.display = 'none';
         let formUrl = 'https://docs.google.com/forms/d/e/' + formIds[randomIndex] + '/viewform?embedded=true';
         let referenceNode = document.getElementsByClassName('container')[0];
@@ -28,15 +39,12 @@ document.addEventListener('DOMContentLoaded', function() {
         newNode.height = '100%';
         newNode.innerHTML = 'Krauname...';
         referenceNode.appendChild(newNode);
+        timer.style.display = 'flex';
+        startTimer();
 
-        if (randomIndex > 0) {
-            timer.style.display = 'block';
-            startTimer();
-
-            myVar = setTimeout(function() {
-                document.location.href = 'pabaiga.html';
-            }, 120000);
-        }
+        myVar = setTimeout(function() {
+            document.location.href = 'pabaiga.html';
+        }, 120000);
     };
 
     startTimer = () => {

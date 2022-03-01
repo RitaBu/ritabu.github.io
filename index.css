@@ -19,7 +19,16 @@
     width: 50%;
 }
 
-#timer,
-.alert {
+.timer {
     display: none;
+}
+
+.info-panel {
+    display: none;
+    align-items: center;
+}
+
+#timer-2 {
+    font-size: 24px;
+    font-weight: bold;
 }
