@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         myVar = setTimeout(function() {
             document.location.href = 'pabaiga.html';
-        }, 240000);
+        }, 420000);
     };
 
     startTimer = () => {

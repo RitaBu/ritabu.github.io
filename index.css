@@ -28,6 +28,10 @@
     align-items: center;
 }
 
+#timer-1 {
+    opacity: 50%;
+}
+
 #timer-2 {
     font-size: 24px;
     font-weight: bold;
