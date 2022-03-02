@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let button = document.getElementById('start-button');
 
     const formIds = [
-        '1FAIpQLSfXizJS6cuRQuQvOGFi_wmEMpNyYn4ytTa2UWjT9N2S4pUwQw', //3
-        '1FAIpQLSf2fJI9n8ovRhFBsIH3trgf1Q-mZLcmtHW2uneY94dTl64s7A', //2
+        // '1FAIpQLSfXizJS6cuRQuQvOGFi_wmEMpNyYn4ytTa2UWjT9N2S4pUwQw', //3
         '1FAIpQLSf3lZQoBjpJaOnzWid7LQ5Ntc98vMFBJNXl5hryiiagpgdoFg', //1
+        '1FAIpQLSf2fJI9n8ovRhFBsIH3trgf1Q-mZLcmtHW2uneY94dTl64s7A', //2
     ];
 
-    let randomIndex = getRandomInt(0, 3);
+    let randomIndex = getRandomInt(0, 2);
 
     let introPanel = document.getElementById('intro-panel');
 
